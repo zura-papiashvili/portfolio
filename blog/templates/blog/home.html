@@ -6,6 +6,43 @@
 {% block content %}
 <!-- Include AOS CSS -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<!-- Include custom CSS -->
+<link href="{% static 'blog/cover.css' %}" rel="stylesheet">
+
+<!-- Include custom JavaScript -->
+<script src="{% static 'blog/script.js' %}"></script>
+
+<section class="cover">
+        <h1>Web Development Portfolio</h1>
+
+        <!-- Code snippet animation -->
+        <div class="code-snippet-container">
+            <div class="code-snippet" id="code-snippet">
+                <pre></pre>
+            </div>
+        </div>
+
+        <!-- Tech skill circles -->
+        <div class="bars-container">
+            <div class="bar design"><span>Design</span></div>
+            <div class="bar development"><span>Development</span></div>
+            <div class="bar testing"><span>Testing</span></div>
+            <div class="bar deployment"><span>Deployment</span></div>
+            <div class="bar maintenance"><span>Maintenance</span></div>
+            <div class="bar optimization"><span>Optimization</span></div>
+        </div>
+
+        <!-- Tech icons -->
+        <div class="tech-icons">
+            <div class="icon"><img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML"></div>
+            <div class="icon"><img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS"></div>
+            <div class="icon"><img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript"></div>
+            <div class="icon"><img src="https://img.icons8.com/color/48/000000/django.png" alt="Django"></div>
+            <div class="icon"><img src="https://img.icons8.com/color/48/000000/nestjs.png" alt="NestJS"></div>
+            <div class="icon"><img src="https://img.icons8.com/color/48/000000/amazon-web-services.png" alt="AWS"></div>
+            <div class="icon"><img src="https://img.icons8.com/color/48/000000/angularjs.png" alt="Angular"></div>
+        </div>
+    </section>
 
 <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-indicators">
@@ -16,7 +53,7 @@
     <div class="carousel-inner">
         {% for image in carousel %}
             <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                <img src="{{ image.image.url }}" class="d-block w-100" alt="Slide {{ forloop.counter }}" style="object-fit: cover; width: 100vh;">
+                <img src="{{ image.image.url }}" class="d-block w-100" alt="Slide {{ forloop.counter }}" style="object-fit: cover; height: 100vh;">
             </div>
         {% endfor %}
     </div>
@@ -30,12 +67,6 @@
     </button>
 </div>
 <div class="container mt-4">
-    <div class="text-center mb-4" data-aos="fade-up">
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSekhdaorQRJHdRLAQX-UkUhnNe70nWLWcORJ6G_rc-mOUJemw/viewform?fbclid=IwZXh0bgNhZW0CMTEAAR2a0PrbCKNEfmqBdub2RY_l4H-boSy6Wkbe5UKEsmdHLKaUd0J0BbhY0Fw_aem_wGCXZE1LxgoZOG2woqhlTA" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="background-color: #b08e19;">Quiero Iniciarme</a>
-    </div>
-    <div class="text-center mb-4" data-aos="fade-up">
-        <a href="{% url 'restricted' %}" class="btn btn-gold" target="_blank" rel="noopener noreferrer" style="background-color: #b08e19;">Para Iniciados</a>
-    </div>
     <h2 class="mb-4 text-center" data-aos="fade-up">Nuevos Videos</h2>
     <div class="row">
         {% for post in posts %}

@@ -157,10 +157,10 @@ class CarouselImage(models.Model):
 
     url = models.URLField(max_length=200, verbose_name="URL", blank=True, null=True)
 
-    def save(self, *args, **kwargs):
-        # Compress and optimize image before saving
-        self.image = compress_and_optimize_image(self.image)
-        super().save(*args, **kwargs)
+    # def save(self, *args, **kwargs):
+    #     # Compress and optimize image before saving
+    #     self.image = compress_and_optimize_image(self.image, quality=100)
+    #     super().save(*args, **kwargs)
 
     def __str__(self):
         return f"Imagen de {self.carousel.title}"
