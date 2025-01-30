@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block title %}Restricted Page{% endblock %}
+
+{% block content %}
+<h1>{{ page.title }}</h1>
+<p>{{ page.content }}</p>
+
+<div class="container mt-5">
+    <h2 class="mb-5 text-center display-4"> Eventos de Zoom para Iniciados</h2>
+    {% if events %}
+        <div class="container">
+            <div class="row">
+                {% for event in events %}
+                    <div class="col-md-4 mb-4">
+                        <div class="card h-100">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ event.title }}</h5>
+                                <p class="card-text">{{ event.description }}</p>
+                                <p class="card-text">
+                                    <small class="text-muted">{{ event.get_type_display }} - {{ event.get_access_type_display }}</small><br>
+                                    <strong>{{ event.event_time }}</strong>
+                                </p>
+                                <a href="{{ event.zoom_link }}" target="_blank" class="btn btn-primary">Entrar</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    {% else %}
+        <div class="alert alert-info" role="alert">
+            No hay eventos disponibles.
+        </div>
+    {% endif %}
+</div>
+
+<div class="container mt-5">
+        <h2 class="mb-5 text-center display-4">Videos para Iniciados</h2>
+        {% for post in posts %}
+            <div class="card shadow-sm mb-5">
+                <div class="card-body">
+                    <h3 class="card-title text-primary">{{ post.title }}</h3>
+                    <p class="card-text text-muted">{{ post.content }}</p>
+                    {% if post.youtube_url %}
+                        <div class="ratio ratio-16x9 mt-4">
+                             {% load youtube_filters %}
+                                {% with post.youtube_url|extract_video_id as video_id %}
+                                <iframe src="https://www.youtube.com/embed/{{ video_id }}" allowfullscreen></iframe>
+                            {% endwith %}
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        {% empty %}
+            <div class="alert alert-warning text-center" role="alert">
+                Videos no disponibles.
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}

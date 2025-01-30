@@ -1,0 +1,24 @@
+/* Customizing accordion button */
+.accordion-button {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.accordion-button:hover {
+    background-color: #b08e19;
+    /* Change background color on hover */
+    transform: scale(1.05);
+    /* Slight scale effect on hover */
+}
+
+/* Accordion item border and padding */
+.accordion-item {
+    border: 1px solid #ddd;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+/* Font size adjustments */
+.accordion-button {
+    font-size: 1.1rem;
+    /* Slightly larger text for better readability */
+}
