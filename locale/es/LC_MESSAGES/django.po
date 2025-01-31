@@ -36,7 +36,7 @@ msgstr "Administración de Django"
 
 #: .\templates\base.html:10 .\templates\base.html:32
 msgid "Smart Route"
-msgstr "Ruta Inteligente"
+msgstr "Webs Unonuevo"
 
 #: .\templates\base.html:42
 msgid "Home"
