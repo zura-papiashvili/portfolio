@@ -6,6 +6,8 @@ from django.template.loader import render_to_string
 from django.http import HttpResponseForbidden
 from .forms import AccessCodeForm
 from portfolio.settings import EMAIL_HOST_USER
+from django.shortcuts import redirect
+from django.utils.translation import activate
 
 
 def home(request):
@@ -15,7 +17,7 @@ def home(request):
     authors = Author.objects.all()[:3]
     carousel = Carousel.objects.filter(title="home-cover").first()
     images = carousel.images.all()
-    print("tttt", events)
+    print("tttt", request.session.get(settings.LANGUAGE_COOKIE_NAME, "en"))
     return render(
         request,
         "blog/home.html",
@@ -109,3 +111,11 @@ def restricted_page_view(request):
 def zoom_events(request):
     events = ZoomEvent.objects.all()
     return render(request, "zoom_events.html", {"events": events})
+
+
+def switch_language(request, language):
+    activate(language)
+    request.session[settings.LANGUAGE_COOKIE_NAME] = language
+    response = redirect(request.META.get("HTTP_REFERER", "/"))
+    response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)  # Set language cookie
+    return response

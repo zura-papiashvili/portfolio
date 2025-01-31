@@ -1,0 +1,284 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-30 18:43-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
+
+#: .\blog\models.py:9
+msgid "Product Name"
+msgstr "პროდუქტის სახელი"
+
+#: .\blog\models.py:24 .\blog\models.py:30
+msgid "Tag"
+msgstr "ტეგი"
+
+#: .\blog\models.py:31 .\blog\models.py:87
+msgid "Tags"
+msgstr "ტეგები"
+
+#: .\blog\models.py:35
+msgid "First Name"
+msgstr "სახელი"
+
+#: .\blog\models.py:36
+msgid "Last Name"
+msgstr "გვარი"
+
+#: .\blog\models.py:37 .\blog\models.py:99
+msgid "Email Address"
+msgstr "ელ.ფოსტის მისამართი"
+
+#: .\blog\models.py:41 .\blog\models.py:154
+msgid "Image"
+msgstr "სურათი"
+
+#: .\blog\models.py:45
+msgid "Biography"
+msgstr "ბიოგრაფია"
+
+#: .\blog\models.py:61 .\blog\models.py:85
+msgid "Author"
+msgstr "ავტორი"
+
+#: .\blog\models.py:62
+msgid "Authors"
+msgstr "ავტორები"
+
+#: .\blog\models.py:66 .\blog\models.py:131 .\blog\models.py:172
+#: .\blog\models.py:187
+msgid "Title"
+msgstr "სათაური"
+
+#: .\blog\models.py:67
+msgid "Excerpt"
+msgstr "ამონარიდი"
+
+#: .\blog\models.py:68
+msgid "Date"
+msgstr "თარიღი"
+
+#: .\blog\models.py:71 .\blog\models.py:195
+msgid "Public"
+msgstr "საჯარო"
+
+#: .\blog\models.py:71 .\blog\models.py:195
+msgid "Private"
+msgstr "პირადი"
+
+#: .\blog\models.py:73 .\blog\models.py:197
+msgid "Access Type"
+msgstr "წვდომის ტიპი"
+
+#: .\blog\models.py:75
+msgid "Slug"
+msgstr "სლაგი"
+
+#: .\blog\models.py:76
+msgid "YouTube URL"
+msgstr "YouTube URL"
+
+#: .\blog\models.py:78 .\blog\models.py:173
+msgid "Content"
+msgstr "შინაარსი"
+
+#: .\blog\models.py:90 .\blog\models.py:102
+msgid "Post"
+msgstr "პოსტი"
+
+#: .\blog\models.py:91
+msgid "Posts"
+msgstr "პოსტები"
+
+#: .\blog\models.py:98
+msgid "User Name"
+msgstr "მომხმარებლის სახელი"
+
+#: .\blog\models.py:100 .\blog\models.py:109
+msgid "Comment"
+msgstr "კომენტარი"
+
+#: .\blog\models.py:110
+msgid "Comments"
+msgstr "კომენტარები"
+
+#: .\blog\models.py:117
+msgid "Question"
+msgstr "კითხვა"
+
+#: .\blog\models.py:118
+msgid "Answer"
+msgstr "პასუხი"
+
+#: .\blog\models.py:124
+msgid "FAQ"
+msgstr "ხშირად დასმული კითხვები"
+
+#: .\blog\models.py:125
+msgid "FAQs"
+msgstr "ხშირად დასმული კითხვები"
+
+#: .\blog\models.py:133 .\blog\models.py:199
+msgid "Description"
+msgstr "აღწერა"
+
+#: .\blog\models.py:140 .\blog\models.py:150
+msgid "Carousel"
+msgstr "კარუსელი"
+
+#: .\blog\models.py:141
+msgid "Carousels"
+msgstr "კარუსელები"
+
+#: .\blog\models.py:158
+msgid "Caption"
+msgstr "სათაური"
+
+#: .\blog\models.py:161
+msgid "URL"
+msgstr "URL"
+
+#: .\blog\models.py:167
+msgid "Carousel Image"
+msgstr "კარუსელის სურათი"
+
+#: .\blog\models.py:168
+msgid "Carousel Images"
+msgstr "კარუსელის სურათები"
+
+#: .\blog\models.py:175
+msgid "Access Code"
+msgstr "წვდომის კოდი"
+
+#: .\blog\models.py:182
+msgid "Restricted Page"
+msgstr "შეზღუდული გვერდი"
+
+#: .\blog\models.py:183
+msgid "Restricted Pages"
+msgstr "შეზღუდული გვერდები"
+
+#: .\blog\models.py:190
+msgid "Webinar"
+msgstr "ვებინარი"
+
+#: .\blog\models.py:190
+msgid "Workshop"
+msgstr "ვორქშოპი"
+
+#: .\blog\models.py:191
+msgid "Type"
+msgstr "ტიპი"
+
+#: .\blog\models.py:200
+msgid "Event Time"
+msgstr "ღონისძიების დრო"
+
+#: .\blog\models.py:201
+msgid "Zoom Link"
+msgstr "Zoom ბმული"
+
+#: .\blog\models.py:207
+msgid "Zoom Event"
+msgstr "Zoom ღონისძიება"
+
+#: .\blog\models.py:208
+msgid "Zoom Events"
+msgstr "Zoom ღონისძიებები"
+
+#: .\blog\templates\blog\home.html:17
+msgid "Web Development Portfolio"
+msgstr "ვებ განვითარების პორტფოლიო"
+
+#: .\blog\templates\blog\home.html:28
+msgid "Design"
+msgstr "დიზაინი"
+
+#: .\blog\templates\blog\home.html:29
+msgid "Development"
+msgstr "განვითარება"
+
+#: .\blog\templates\blog\home.html:30
+msgid "Testing"
+msgstr "ტესტირება"
+
+#: .\blog\templates\blog\home.html:31
+msgid "Deployment"
+msgstr "განთავსება"
+
+#: .\blog\templates\blog\home.html:32
+msgid "Maintenance"
+msgstr "მოვლა"
+
+#: .\blog\templates\blog\home.html:33
+msgid "Optimization"
+msgstr "ოპტიმიზაცია"
+
+#: .\blog\templates\blog\home.html:71
+msgid "New Videos"
+msgstr "ახალი ვიდეოები"
+
+#: .\blog\templates\blog\home.html:95
+msgid "Videos not available."
+msgstr "ვიდეოები არ არის ხელმისაწვდომი."
+
+#: .\blog\templates\blog\home.html:101
+msgid "See All Videos"
+msgstr "იხილეთ ყველა ვიდეო"
+
+#: .\blog\templates\blog\home.html:106
+msgid "Frequently Asked Questions"
+msgstr "ხშირად დასმული კითხვები"
+
+#: .\blog\templates\blog\home.html:127
+msgid "Featured Authors"
+msgstr "გამორჩეული ავტორები"
+
+#: .\blog\templates\blog\home.html:144
+msgid "Authors not available."
+msgstr "ავტორები არ არის ხელმისაწვდომი."
+
+#: .\blog\templates\blog\home.html:149
+msgid "See All Authors"
+msgstr "იხილეთ ყველა ავტორი"
+
+#: .\blog\templates\blog\home.html:156
+msgid "Upcoming Meetings"
+msgstr "მომავალი შეხვედრები"
+
+#: .\blog\templates\blog\home.html:164
+msgid "Type:"
+msgstr "ტიპი:"
+
+#: .\blog\templates\blog\home.html:165
+msgid "Access:"
+msgstr "წვდომა:"
+
+#: .\blog\templates\blog\home.html:166
+msgid "Date and Time:"
+msgstr "თარიღი და დრო:"
+
+#: .\blog\templates\blog\home.html:167
+msgid "Join the Meeting"
+msgstr "შეხვედრაში ჩართვა"
+
+#: .\blog\templates\blog\home.html:173
+msgid "No meetings available."
+msgstr "შეხვედრები არ არის ხელმისაწვდომი."
+
+#: .\blog\templates\blog\home.html:179
+msgid "See All Meetings"
+msgstr "იხილეთ ყველა შეხვედრა"

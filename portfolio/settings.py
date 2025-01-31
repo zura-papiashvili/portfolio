@@ -13,12 +13,19 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 import environ
 import os
+from django.utils.translation import gettext_lazy as _
+
 
 # Initialize environment variables
 env = environ.Env(DEBUG=(bool, False))  # Set default values and casting
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+LOCALE_PATHS = [
+    BASE_DIR / "locale",
+]
 
 # Read .env file
 environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
@@ -51,9 +58,9 @@ INSTALLED_APPS = [
 ]
 
 MIDDLEWARE = [
+    "django.middleware.locale.LocaleMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
-    "django.middleware.locale.LocaleMiddleware",
     "whitenoise.middleware.WhiteNoiseMiddleware",
     "django.middleware.common.CommonMiddleware",
     "django.middleware.csrf.CsrfViewMiddleware",
@@ -118,16 +125,18 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
-LANGUAGE_CODE = "en-us"
+LANGUAGE_COOKIE_NAME = "django_language"
 
 LANGUAGES = [
-    ("en", "English"),
-    ("es", "Spanish"),
+    ("en", _("English")),
+    ("es", _("Spanish")),
+    ("ka", _("Georgian")),
 ]
-
+LANGUAGE_CODE = "es"
 TIME_ZONE = "UTC"
 
 USE_I18N = True
+USE_L10N = True
 
 USE_TZ = True
 

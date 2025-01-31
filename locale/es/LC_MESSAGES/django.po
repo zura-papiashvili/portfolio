@@ -1,0 +1,71 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-30 18:43-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
+"1 : 2;\n"
+#: .\portfolio\settings.py:131 .\templates\base.html:65
+msgid "English"
+msgstr "Inglés"
+
+#: .\portfolio\settings.py:132 .\templates\base.html:66
+msgid "Spanish"
+msgstr "Español"
+
+#: .\portfolio\settings.py:133 .\templates\base.html:67
+msgid "Georgian"
+msgstr "Georgiano"
+
+#: .\templates\admin\base_site.html:6
+msgid "Django administration"
+msgstr "Administración de Django"
+
+#: .\templates\base.html:10 .\templates\base.html:32
+msgid "Smart Route"
+msgstr "Ruta Inteligente"
+
+#: .\templates\base.html:42
+msgid "Home"
+msgstr "Inicio"
+
+#: .\templates\base.html:45
+msgid "About"
+msgstr "Acerca de"
+
+#: .\templates\base.html:48
+msgid "Events"
+msgstr "Eventos"
+
+#: .\templates\base.html:51
+msgid "For Members"
+msgstr "Para Miembros"
+
+#: .\templates\base.html:54
+msgid "Videos"
+msgstr "Videos"
+
+#: .\templates\base.html:57
+msgid "Contact"
+msgstr "Contacto"
+
+#: .\templates\base.html:62
+msgid "Language"
+msgstr "Idioma"
+
+#: .\templates\base.html:92
+msgid "Smart Route Inc. All Rights Reserved."
+msgstr "Smart Route Inc. Todos los Derechos Reservados."
