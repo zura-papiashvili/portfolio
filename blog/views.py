@@ -1,5 +1,6 @@
 from django.shortcuts import get_object_or_404, render
 from .models import Author, Post, FAQ, Carousel, RestrictedPage, ZoomEvent
+from project.models import Project
 from django.core.mail import send_mail
 from django.conf import settings
 from django.template.loader import render_to_string
@@ -12,21 +13,17 @@ from django.utils.translation import activate
 
 def home(request):
     events = ZoomEvent.objects.filter(access_type="public").all()
-    posts = Post.objects.filter(access_type="public").order_by("-date")[:3]
     faqs = FAQ.objects.all()
     authors = Author.objects.all()[:3]
-    carousel = Carousel.objects.filter(title="home-cover").first()
-    images = carousel.images.all()
-    print("tttt", request.session.get(settings.LANGUAGE_COOKIE_NAME, "en"))
+    projects = Project.objects.all()[:3]
     return render(
         request,
         "blog/home.html",
         {
-            "posts": posts,
             "faqs": faqs,
             "authors": authors,
-            "carousel": images,
             "events": events,
+            "projects": projects,
         },
     )
 

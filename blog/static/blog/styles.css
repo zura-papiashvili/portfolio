@@ -1,24 +1,28 @@
-/* Customizing accordion button */
-.accordion-button {
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
+    .accordion-button {
+        transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
 
-.accordion-button:hover {
-    background-color: #b08e19;
-    /* Change background color on hover */
-    transform: scale(1.05);
-    /* Slight scale effect on hover */
-}
+    .accordion-button:hover {
+        background-color: #34495e;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
 
-/* Accordion item border and padding */
-.accordion-item {
-    border: 1px solid #ddd;
-    padding: 5px;
-    border-radius: 10px;
-}
+    .accordion-body {
+        font-size: 1.1rem;
+        line-height: 1.6;
+        color: #555;
+    }
 
-/* Font size adjustments */
-.accordion-button {
-    font-size: 1.1rem;
-    /* Slightly larger text for better readability */
-}
+    .accordion-item {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .accordion-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .active-faq {
+        background-color: #2980b9 !important;
+        border-color: #3498db !important;
+    }

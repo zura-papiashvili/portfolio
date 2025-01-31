@@ -124,12 +124,3 @@ header.hidden {
     transform: scaleX(1);
     transform-origin: bottom left;
 }
-
-/* Mobile view adjustments */
-.navbar-toggler {
-    border-color: #f39c12;
-}
-
-.navbar-toggler-icon {
-    background-color: #f39c12;
-}

@@ -25,4 +25,5 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", include("blog.urls")),
     path("set-language/", set_language, name="set_language"),
+    path("projects/", include("project.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

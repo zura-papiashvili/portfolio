@@ -245,15 +245,15 @@ msgstr "ხშირად დასმული კითხვები"
 
 #: .\blog\templates\blog\home.html:127
 msgid "Featured Authors"
-msgstr "გამორჩეული ავტორები"
+msgstr "ჩვენი გუნდი"
 
 #: .\blog\templates\blog\home.html:144
 msgid "Authors not available."
-msgstr "ავტორები არ არის ხელმისაწვდომი."
+msgstr "გუნდის წევრები არაა ხელმისაწვდომი"
 
 #: .\blog\templates\blog\home.html:149
 msgid "See All Authors"
-msgstr "იხილეთ ყველა ავტორი"
+msgstr "იხილეთ ყველა"
 
 #: .\blog\templates\blog\home.html:156
 msgid "Upcoming Meetings"

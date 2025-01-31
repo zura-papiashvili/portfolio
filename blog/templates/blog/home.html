@@ -9,9 +9,15 @@
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <!-- Include custom CSS -->
 <link href="{% static 'blog/cover.css' %}" rel="stylesheet">
+<link href="{% static 'blog/projects.css' %}" rel="stylesheet">
 
 <!-- Include custom JavaScript -->
 <script src="{% static 'blog/script.js' %}"></script>
+<script>
+    AOS.init({
+        duration: 2000,  // Animation speed
+    });
+</script>
 
 <section class="cover">
         <h1>{% trans "Web Development Portfolio" %}</h1>
@@ -45,75 +51,60 @@
         </div>
     </section>
 
-<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-indicators">
-        {% for i in carousel %}
-            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="{{ forloop.counter0 }}" class="{% if forloop.first %}active{% endif %}" aria-current="{% if forloop.first %}true{% endif %}" aria-label="Slide {{ forloop.counter }}"></button>
-        {% endfor %}
-    </div>
-    <div class="carousel-inner">
-        {% for image in carousel %}
-            <div class="carousel-item {% if forloop.first %}active{% endif %}">
-                <img src="{{ image.image.url }}" class="d-block w-100" alt="Slide {{ forloop.counter }}" style="object-fit: cover; height: 100vh;">
-            </div>
-        {% endfor %}
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-    </button>
-</div>
-<div class="container mt-4">
-    <h2 class="mb-4 text-center" data-aos="fade-up">{% trans "New Videos" %}</h2>
-    <div class="row">
-    {% for post in posts %}
-        <div class="col-md-4 mb-4 d-flex align-items-stretch" data-aos="fade-left">
-        <div class="card shadow border-0 w-100 fade-up" style="border-radius: 15px; overflow: hidden;">
-            <div class="card-body p-4 d-flex flex-column">
-            <h3 class="card-title text-primary fw-bold">{{ post.title }}</h3>
-            <p class="card-text text-muted">{{ post.content }}</p>
-            {% if post.youtube_url %}
-                <div class="ratio ratio-16x9 mt-3">
-                {% load youtube_filters %}
-                {% with post.youtube_url|extract_video_id as video_id %}
-                    <iframe src="https://www.youtube.com/embed/{{ video_id }}" allowfullscreen style="border-radius: 15px;" rel="noopener noreferrer"></iframe>
-                {% endwith %}
+<div class="container py-5">
+    <h1 class="text-center text-primary mb-4" data-aos="fade-up">Our Projects</h1>
+    
+    <div class="row g-4 d-flex align-items-stretch">
+        {% for project in projects %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card project-card shadow-sm border-0" data-aos="zoom-in">
+                    {% if project.image %}
+                        <img src="{{ project.image.url }}" alt="{{ project.name }}" class="card-img-top project-img">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title text-dark">{{ project.name }}</h5>
+                        <p class="text-muted"><strong>Customer:</strong> {{ project.customer_name }}</p>
+                        <p class="badge bg-success">{{ project.get_status_display }}</p>
+                        <p><strong>Start Date:</strong> {{ project.start_date }}</p>
+                        {% if project.end_date %}
+                            <p><strong>End Date:</strong> {{ project.end_date }}</p>
+                        {% endif %}
+                        <p><strong>Budget:</strong> ${{ project.budget }}</p>
+                        {% if project.cost %}
+                            <p><strong>Cost:</strong> ${{ project.cost }}</p>
+                        {% endif %}
+                        <p class="text-muted">{{ project.description|truncatewords:20 }}</p>
+
+                        {% if project.project_video %}
+                            <a href="{{ project.project_video }}" class="btn btn-primary w-100" target="_blank" rel="noopener noreferrer">
+                                🔗 See Website
+                            </a>
+                        {% endif %}
+                    </div>
                 </div>
-            {% endif %}
-            <div class="mt-auto">
-                <!-- Add any additional content here if needed -->
             </div>
-            </div>
-        </div>
-        </div>
-    {% empty %}
-        <div class="alert alert-warning text-center" role="alert" data-aos="fade-up">
-        {% trans "Videos not available." %}
-        </div>
-    {% endfor %}
+        {% empty %}
+            <p>No projects found.</p>
+        {% endfor %}
     </div>
-</div>
-<div class="text-center mt-4" data-aos="fade-up">
-    <a href="{% url 'posts' %}" class="btn btn-primary" style="background-color: #b08e19;">{% trans "See All Videos" %}</a>
 </div>
 
-<!-- FAQ Section using Bootstrap Accordion -->
+
+
+
+<!-- FAQ Section with Enhanced Styles and JavaScript -->
 <div class="container mt-5">
     <h2 class="text-center mb-4 text-primary" data-aos="fade-up">{% trans "Frequently Asked Questions" %}</h2>
     <div class="accordion" id="faqAccordion">
     {% for faq in faqs %}
-        <div class="accordion-item mb-3 shadow-sm rounded-3" data-aos="fade-right">
+        <div class="accordion-item mb-4 shadow-lg rounded-3" data-aos="fade-right">
         <h2 class="accordion-header" id="heading{{ forloop.counter }}">
-            <button style="background-color: #b08e19;" class="accordion-button text-white border-0 rounded-3 p-3 {% if forloop.first %}collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
-            <i class="fas fa-question-circle me-2"></i>{{ faq.question }}
+            <button style="background-color: #2c3e50; border: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);" class="accordion-button text-white border-0 rounded-3 p-3 fw-bold fs-5 d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
+                <i class="fas fa-question-circle me-3" style="font-size: 1.3rem;"></i>{{ faq.question }}
             </button>
         </h2>
         <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#faqAccordion">
-            <div class="accordion-body text-muted p-3">
+            <div class="accordion-body text-muted p-4" style="background-color: #f9f9f9; border-left: 4px solid #3498db;">
             {{ faq.answer }}
             </div>
         </div>
@@ -130,8 +121,8 @@
         <div class="col-md-4 mb-4 d-flex align-items-stretch" data-aos="fade-up">
         <div class="card shadow border-0 w-100 fade-up" style="border-radius: 15px; overflow: hidden;">
             <div class="card-body p-4 d-flex flex-column text-center">
-            <img src="{{ author.image.url }}" class="rounded-circle mb-3" alt="{{ author.name }}" style="width: 100px; height: 100px; object-fit: cover;">
-            <h3 class="card-title text-primary fw-bold">{{ author.name }}</h3>
+            <img src="{{ author.image.url }}" class="rounded-circle mb-3" alt="{{ author.first_name }} {{ author.last_name }}" style="width: 100px; height: 100px; object-fit: cover;">
+            <h3 class="card-title text-primary fw-bold">{{ author.first_name }} {{ author.last_name }}</h3>
             <p class="card-text text-muted">{{ author.bio }}</p>
             <div class="mt-auto">
                 <!-- Add any additional content here if needed -->
