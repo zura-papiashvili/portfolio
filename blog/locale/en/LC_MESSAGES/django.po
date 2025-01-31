@@ -1,0 +1,284 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-01-30 18:43-0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: .\blog\models.py:9
+msgid "Product Name"
+msgstr ""
+
+#: .\blog\models.py:24 .\blog\models.py:30
+msgid "Tag"
+msgstr ""
+
+#: .\blog\models.py:31 .\blog\models.py:87
+msgid "Tags"
+msgstr ""
+
+#: .\blog\models.py:35
+msgid "First Name"
+msgstr ""
+
+#: .\blog\models.py:36
+msgid "Last Name"
+msgstr ""
+
+#: .\blog\models.py:37 .\blog\models.py:99
+msgid "Email Address"
+msgstr ""
+
+#: .\blog\models.py:41 .\blog\models.py:154
+msgid "Image"
+msgstr ""
+
+#: .\blog\models.py:45
+msgid "Biography"
+msgstr ""
+
+#: .\blog\models.py:61 .\blog\models.py:85
+msgid "Author"
+msgstr ""
+
+#: .\blog\models.py:62
+msgid "Authors"
+msgstr ""
+
+#: .\blog\models.py:66 .\blog\models.py:131 .\blog\models.py:172
+#: .\blog\models.py:187
+msgid "Title"
+msgstr ""
+
+#: .\blog\models.py:67
+msgid "Excerpt"
+msgstr ""
+
+#: .\blog\models.py:68
+msgid "Date"
+msgstr ""
+
+#: .\blog\models.py:71 .\blog\models.py:195
+msgid "Public"
+msgstr ""
+
+#: .\blog\models.py:71 .\blog\models.py:195
+msgid "Private"
+msgstr ""
+
+#: .\blog\models.py:73 .\blog\models.py:197
+msgid "Access Type"
+msgstr ""
+
+#: .\blog\models.py:75
+msgid "Slug"
+msgstr ""
+
+#: .\blog\models.py:76
+msgid "YouTube URL"
+msgstr ""
+
+#: .\blog\models.py:78 .\blog\models.py:173
+msgid "Content"
+msgstr ""
+
+#: .\blog\models.py:90 .\blog\models.py:102
+msgid "Post"
+msgstr ""
+
+#: .\blog\models.py:91
+msgid "Posts"
+msgstr ""
+
+#: .\blog\models.py:98
+msgid "User Name"
+msgstr ""
+
+#: .\blog\models.py:100 .\blog\models.py:109
+msgid "Comment"
+msgstr ""
+
+#: .\blog\models.py:110
+msgid "Comments"
+msgstr ""
+
+#: .\blog\models.py:117
+msgid "Question"
+msgstr ""
+
+#: .\blog\models.py:118
+msgid "Answer"
+msgstr ""
+
+#: .\blog\models.py:124
+msgid "FAQ"
+msgstr ""
+
+#: .\blog\models.py:125
+msgid "FAQs"
+msgstr ""
+
+#: .\blog\models.py:133 .\blog\models.py:199
+msgid "Description"
+msgstr ""
+
+#: .\blog\models.py:140 .\blog\models.py:150
+msgid "Carousel"
+msgstr ""
+
+#: .\blog\models.py:141
+msgid "Carousels"
+msgstr ""
+
+#: .\blog\models.py:158
+msgid "Caption"
+msgstr ""
+
+#: .\blog\models.py:161
+msgid "URL"
+msgstr ""
+
+#: .\blog\models.py:167
+msgid "Carousel Image"
+msgstr ""
+
+#: .\blog\models.py:168
+msgid "Carousel Images"
+msgstr ""
+
+#: .\blog\models.py:175
+msgid "Access Code"
+msgstr ""
+
+#: .\blog\models.py:182
+msgid "Restricted Page"
+msgstr ""
+
+#: .\blog\models.py:183
+msgid "Restricted Pages"
+msgstr ""
+
+#: .\blog\models.py:190
+msgid "Webinar"
+msgstr ""
+
+#: .\blog\models.py:190
+msgid "Workshop"
+msgstr ""
+
+#: .\blog\models.py:191
+msgid "Type"
+msgstr ""
+
+#: .\blog\models.py:200
+msgid "Event Time"
+msgstr ""
+
+#: .\blog\models.py:201
+msgid "Zoom Link"
+msgstr ""
+
+#: .\blog\models.py:207
+msgid "Zoom Event"
+msgstr ""
+
+#: .\blog\models.py:208
+msgid "Zoom Events"
+msgstr ""
+
+#: .\blog\templates\blog\home.html:17
+msgid "Web Development Portfolio"
+msgstr ""
+
+#: .\blog\templates\blog\home.html:28
+msgid "Design"
+msgstr ""
+
+#: .\blog\templates\blog\home.html:29
+msgid "Development"
+msgstr ""
+
+#: .\blog\templates\blog\home.html:30
+msgid "Testing"
+msgstr ""
+
+#: .\blog\templates\blog\home.html:31
+msgid "Deployment"
+msgstr ""
+
+#: .\blog\templates\blog\home.html:32
+msgid "Maintenance"
+msgstr ""
+
+#: .\blog\templates\blog\home.html:33
+msgid "Optimization"
+msgstr ""
+
+#: .\blog\templates\blog\home.html:71
+msgid "New Videos"
+msgstr ""
+
+#: .\blog\templates\blog\home.html:95
+msgid "Videos not available."
+msgstr ""
+
+#: .\blog\templates\blog\home.html:101
+msgid "See All Videos"
+msgstr ""
+
+#: .\blog\templates\blog\home.html:106
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: .\blog\templates\blog\home.html:127
+msgid "Featured Authors"
+msgstr ""
+
+#: .\blog\templates\blog\home.html:144
+msgid "Authors not available."
+msgstr ""
+
+#: .\blog\templates\blog\home.html:149
+msgid "See All Authors"
+msgstr ""
+
+#: .\blog\templates\blog\home.html:156
+msgid "Upcoming Meetings"
+msgstr ""
+
+#: .\blog\templates\blog\home.html:164
+msgid "Type:"
+msgstr ""
+
+#: .\blog\templates\blog\home.html:165
+msgid "Access:"
+msgstr ""
+
+#: .\blog\templates\blog\home.html:166
+msgid "Date and Time:"
+msgstr ""
+
+#: .\blog\templates\blog\home.html:167
+msgid "Join the Meeting"
+msgstr ""
+
+#: .\blog\templates\blog\home.html:173
+msgid "No meetings available."
+msgstr ""
+
+#: .\blog\templates\blog\home.html:179
+msgid "See All Meetings"
+msgstr ""

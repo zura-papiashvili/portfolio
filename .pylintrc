@@ -1,5 +1,5 @@
 [TYPECHECK]
-ignored-modules = django
+ignored-modules = [a-zA-Z]*
 
 [MESSAGES CONTROL]
 disable = unused-import
