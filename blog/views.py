@@ -9,13 +9,21 @@ from .forms import AccessCodeForm
 from portfolio.settings import EMAIL_HOST_USER
 from django.shortcuts import redirect
 from django.utils.translation import activate
+from django.utils.translation import get_language
 
 
 def home(request):
+    language = get_language()  # or request.LANGUAGE_CODE
     events = ZoomEvent.objects.filter(access_type="public").all()
-    faqs = FAQ.objects.all()
+    faqs = FAQ.objects.exclude(**{f"question_{language}": ""}).all()
     authors = Author.objects.all()[:3]
-    projects = Project.objects.all()[:3]
+    # get activated language
+    # Get current language
+
+    # Filter projects based on active language (Parler)
+    # Dynamically filter translated fields
+    projects = Project.objects.exclude(**{f"name_{language}": ""}).all()[:3]
+
     return render(
         request,
         "blog/home.html",

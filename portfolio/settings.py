@@ -46,6 +46,7 @@ ALLOWED_HOSTS = [".vercel.app", "localhost", "127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
+    "modeltranslation",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -127,13 +128,17 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/5.1/topics/i18n/
 
 LANGUAGE_COOKIE_NAME = "django_language"
-
+IS_MONOLINGUAL = False
+gettext = lambda s: s
 LANGUAGES = [
     ("en", _("English")),
     ("es", _("Spanish")),
     ("ka", _("Georgian")),
 ]
-LANGUAGE_CODE = "es"
+MODELTRANSLATION_DEFAULT_LANGUAGE = "en"
+MODELTRANSLATION_FALLBACK_LANGUAGES = ("en",)
+MODELTRANSLATION_PREPOPULATE_LANGUAGE = "en"
+LANGUAGE_CODE = "en"
 TIME_ZONE = "UTC"
 
 USE_I18N = True

@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.forms import DateTimeInput
 from django import forms
 
+from modeltranslation.admin import TranslationAdmin
+
 # Register your models here.
 
 from .models import (
@@ -17,7 +19,8 @@ from .models import (
 )
 
 
-class AuthorAdmin(admin.ModelAdmin):
+@admin.register(Author)
+class AuthorAdmin(TranslationAdmin):
     list_display = ("last_name", "first_name", "email_address")
     search_fields = ("last_name", "first_name")
 
@@ -35,9 +38,10 @@ class CommentAdmin(admin.ModelAdmin):
     search_fields = ("user_name", "text")
 
 
-class FAQAdmin(admin.ModelAdmin):
-    list_display = ("question", "answer")
-    search_fields = ("question", "answer")
+@admin.register(FAQ)
+class FAQAdmin(TranslationAdmin):
+    list_display = ("question", "answer")  # Display translated fields
+    search_fields = ("question", "answer")  # Enable search functionality
 
 
 class CarouselImageInline(admin.TabularInline):
@@ -78,7 +82,5 @@ class ZoomEventAdmin(admin.ModelAdmin):
     search_fields = ["title", "description"]
 
 
-admin.site.register(FAQ, FAQAdmin)
-admin.site.register(Author, AuthorAdmin)
 admin.site.register(Tag)
 admin.site.register(Comment, CommentAdmin)
