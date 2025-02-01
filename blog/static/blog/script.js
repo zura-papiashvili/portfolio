@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const codeSnippet = document.getElementById("code-snippet").querySelector("pre");
     const code = [
         { text: "const", class: "keyword" },
-        { text: " myPortfolio", class: "variable" },
+        { text: " newWebsite", class: "variable" },
         { text: " = ", class: "" },
         { text: "'Web Dev'", class: "string" },
         { text: ";", class: "" },
@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
         { text: " {", class: "" },
         { text: "\n  ", class: "" },
         { text: "return", class: "variable" },
-        { text: " 'Interactive Portfolio'", class: "string" },
+        { text: " 'Special Website For You!'", class: "string" },
         { text: ";", class: "" },
         { text: "\n}", class: "" }
     ];
