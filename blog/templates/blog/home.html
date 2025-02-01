@@ -51,6 +51,40 @@
         </div>
     </section>
 
+    <!-- Services Section -->
+    <div class="container mt-5">
+        <h2 class="text-center mb-4 text-primary" data-aos="fade-up">{% trans "Our Services" %}</h2>
+        <div class="row">
+            {% for service in services %}
+            <div class="col-md-4 mb-4 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="card shadow border-0 w-100" style="border-radius: 15px; overflow: hidden;">
+                    <div class="card-body p-4 d-flex flex-column">
+                        <h3 class="card-title text-primary fw-bold">{{ service.title }}</h3>
+                        <p class="card-text text-muted">{{ service.description }}</p>
+                        <p class="card-text"><strong>{% trans "Price Range:" %}</strong> {{ service.price_range }}</p>
+                        <p class="card-text"><strong>{% trans "Features:" %}</strong></p>
+                        <ul class="list-unstyled">
+                            {% for feature in service.get_features %}
+                            <li>- {{ feature }}</li>
+                            {% endfor %}
+                        </ul>
+                        <p class="card-text"><strong>{% trans "Ideal For:" %}</strong></p>
+                        <ul class="list-unstyled">
+                            {% for group in service.get_ideal_for %}
+                            <li>- {{ group }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="alert alert-warning text-center" role="alert" data-aos="fade-up">
+                {% trans "No services available." %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
 <div class="container py-5">
     <h1 class="text-center text-primary mb-4" data-aos="fade-up">Our Projects</h1>
     

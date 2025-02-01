@@ -97,3 +97,29 @@ class Project(models.Model):
         ordering = ["-start_date"]  # Order by start date (most recent first)
         verbose_name = "Project"
         verbose_name_plural = "Projects"
+
+
+class Service(models.Model):
+    title = models.CharField(max_length=255, verbose_name="Title")
+    price_range = models.CharField(max_length=255, verbose_name="Price Range")
+    description = models.TextField(verbose_name="Description")
+    features = models.TextField(
+        help_text="Separate features with a new line.", verbose_name="Features"
+    )
+    ideal_for = models.TextField(
+        help_text="Separate target groups with a new line.", verbose_name="Ideal For"
+    )
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Created At")
+
+    def get_features(self):
+        return self.features.split("\n")
+
+    def get_ideal_for(self):
+        return self.ideal_for.split("\n")
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        verbose_name = "Service"
+        verbose_name_plural = "Services"

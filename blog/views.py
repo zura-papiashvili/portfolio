@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, render
 from .models import Author, Post, FAQ, Carousel, RestrictedPage, ZoomEvent
 from project.models import Project
+from project.models import Service
 from django.core.mail import send_mail
 from django.conf import settings
 from django.template.loader import render_to_string
@@ -17,11 +18,7 @@ def home(request):
     events = ZoomEvent.objects.filter(access_type="public").all()
     faqs = FAQ.objects.exclude(**{f"question_{language}": ""}).all()
     authors = Author.objects.all()[:3]
-    # get activated language
-    # Get current language
-
-    # Filter projects based on active language (Parler)
-    # Dynamically filter translated fields
+    services = Service.objects.exclude(**{f"title_{language}": ""}).all()[:3]
     projects = Project.objects.exclude(**{f"name_{language}": ""}).all()[:3]
 
     return render(
@@ -32,6 +29,7 @@ def home(request):
             "authors": authors,
             "events": events,
             "projects": projects,
+            "services": services,
         },
     )
 

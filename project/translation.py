@@ -1,9 +1,12 @@
-from modeltranslation.translator import translator, TranslationOptions
-from .models import Project
+from .models import Project, Service
+from modeltranslation.translator import register, TranslationOptions
 
 
+@register(Project)
 class ProjectTranslationOptions(TranslationOptions):
     fields = ("name", "description")
 
 
-translator.register(Project, ProjectTranslationOptions)
+@register(Service)
+class ServiceTranslationOptions(TranslationOptions):
+    fields = ("title", "description", "features", "ideal_for")
