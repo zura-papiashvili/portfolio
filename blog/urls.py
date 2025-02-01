@@ -2,7 +2,7 @@ from django.urls import path
 from . import views
 from django.contrib.sitemaps.views import sitemap
 from .sitemaps import StaticViewSitemap  # Import your sitemaps
-from .views import switch_language
+from .views import switch_language, offline_page
 
 
 sitemaps = {
@@ -18,4 +18,5 @@ urlpatterns = [
     path("sitemap.xml", sitemap, {"sitemaps": sitemaps}),
     path("restricted/", views.restricted_page_view, name="restricted"),
     path("switch-language/<str:language>/", switch_language, name="switch_language"),
+    path("offline/", offline_page, name="offline"),
 ]

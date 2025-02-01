@@ -122,3 +122,7 @@ def switch_language(request, language):
     response = redirect(request.META.get("HTTP_REFERER", "/"))
     response.set_cookie(settings.LANGUAGE_COOKIE_NAME, language)  # Set language cookie
     return response
+
+
+def offline_page(request):
+    return render(request, "offline.html")
