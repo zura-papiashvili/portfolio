@@ -9,4 +9,4 @@ class ProjectTranslationOptions(TranslationOptions):
 
 @register(Service)
 class ServiceTranslationOptions(TranslationOptions):
-    fields = ("title", "description", "features", "ideal_for")
+    fields = ("title", "description", "features", "ideal_for", "price_range")
