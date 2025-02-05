@@ -206,3 +206,24 @@ class ZoomEvent(models.Model):
     class Meta:
         verbose_name = _("Zoom Event")
         verbose_name_plural = _("Zoom Events")
+
+
+class WebProduct(models.Model):
+    name = models.CharField(max_length=100, verbose_name=_("Product Name"))
+    description = models.TextField(verbose_name=_("Description"))
+    price = models.DecimalField(
+        max_digits=10, decimal_places=2, verbose_name=_("Price")
+    )
+    image = models.ImageField(
+        upload_to="web_products/images",
+        verbose_name=_("Image"),
+        validators=[validate_image_size],
+    )
+    available = models.BooleanField(default=True, verbose_name=_("Available"))
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name = _("Web Product")
+        verbose_name_plural = _("Web Products")

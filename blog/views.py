@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, render
-from .models import Author, Post, FAQ, Carousel, RestrictedPage, ZoomEvent
+from .models import Author, Post, FAQ, Carousel, RestrictedPage, ZoomEvent, WebProduct
 from project.models import Project
 from project.models import Service
 from django.core.mail import send_mail
@@ -20,6 +20,7 @@ def home(request):
     authors = Author.objects.all()[:3]
     services = Service.objects.exclude(**{f"title_{language}": ""}).all()[:3]
     projects = Project.objects.exclude(**{f"name_{language}": ""}).all()[:3]
+    web_products = WebProduct.objects.exclude(**{f"name_{language}": ""}).all()[:3]
 
     return render(
         request,
@@ -30,6 +31,7 @@ def home(request):
             "events": events,
             "projects": projects,
             "services": services,
+            "products": web_products,
         },
     )
 
@@ -114,6 +116,11 @@ def restricted_page_view(request):
 def zoom_events(request):
     events = ZoomEvent.objects.all()
     return render(request, "zoom_events.html", {"events": events})
+
+
+def web_products(request):
+    products = WebProduct.objects.all()
+    return render(request, "web_products.html", {"products": products})
 
 
 def switch_language(request, language):

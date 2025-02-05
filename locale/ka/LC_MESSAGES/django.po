@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-01-30 18:43-0500\n"
+"POT-Creation-Date: 2025-02-05 09:46-0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,15 +17,16 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n!=1);\n"
-#: .\portfolio\settings.py:131 .\templates\base.html:65
+
+#: .\portfolio\settings.py:134 .\templates\base.html:70
 msgid "English"
 msgstr "ინგლისური"
 
-#: .\portfolio\settings.py:132 .\templates\base.html:66
+#: .\portfolio\settings.py:135 .\templates\base.html:71
 msgid "Spanish"
 msgstr "ესპანური"
 
-#: .\portfolio\settings.py:133 .\templates\base.html:67
+#: .\portfolio\settings.py:136 .\templates\base.html:72
 msgid "Georgian"
 msgstr "ქართული"
 
@@ -33,38 +34,41 @@ msgstr "ქართული"
 msgid "Django administration"
 msgstr "Django ადმინისტრაცია"
 
-#: .\templates\base.html:10 .\templates\base.html:32
+#: .\templates\base.html:10 .\templates\base.html:37
 msgid "Smart Route"
 msgstr "Webs Unonuevo"
 
-#: .\templates\base.html:42
+#: .\templates\base.html:47
 msgid "Home"
 msgstr "მთავარი"
 
-#: .\templates\base.html:45
+#: .\templates\base.html:50
 msgid "About"
 msgstr "ჩვენს შესახებ"
 
-#: .\templates\base.html:48
-msgid "Events"
-msgstr "ღონისძიებები"
+#: .\templates\base.html:53
+msgid "Products"
+msgstr ""
 
-#: .\templates\base.html:51
+#: .\templates\base.html:56
 msgid "For Members"
 msgstr "წევრებისთვის"
 
-#: .\templates\base.html:54
+#: .\templates\base.html:59
 msgid "Videos"
 msgstr "ვიდეოები"
 
-#: .\templates\base.html:57
+#: .\templates\base.html:62
 msgid "Contact"
 msgstr "კონტაქტი"
 
-#: .\templates\base.html:62
+#: .\templates\base.html:67
 msgid "Language"
 msgstr "ენა"
 
-#: .\templates\base.html:92
+#: .\templates\base.html:97
 msgid "Smart Route Inc. All Rights Reserved."
 msgstr "Smart Route Inc. ყველა უფლება დაცულია."
+
+#~ msgid "Events"
+#~ msgstr "ღონისძიებები"

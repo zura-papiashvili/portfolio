@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block title %}Web Products{% endblock %}
+
+{% block content %}
+    <h1>Web Products</h1>
+    <div class="products">
+        {% for product in products %}
+            <div class="product">
+                <h2>{{ product.name }}</h2>
+                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                <p>{{ product.description }}</p>
+                <p>Price: ${{ product.price }}</p>
+                <p>Available: {{ product.available|yesno:"Yes,No" }}</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
