@@ -1,282 +1,427 @@
-  /* Reset styles */
-  * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-  }
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  body,
-  html {
-      height: 100%;
-      font-family: Arial, sans-serif;
-  }
+body,
+html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
 
-  /* Full-screen cover section */
-  .cover {
-      display: flex;
-      flex-direction: column;
-      justify-content: space-around;
-      align-items: center;
-      height: 100vh;
-      background: linear-gradient(45deg, #3498db, #8e44ad);
-      color: white;
-      text-align: center;
-      padding: 20px;
-  }
+/* Full-screen cover section */
+.cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 100vh;
+    background: linear-gradient(45deg, #3498db, #8e44ad);
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
 
-  h1 {
-      font-size: 2rem;
-      animation: fadeIn 3s ease-in-out;
-      margin-bottom: 10px;
-  }
+h1 {
+    font-size: 2rem;
+    animation: fadeIn 3s ease-in-out;
+    margin-bottom: 10px;
+}
 
-  /* Fade-in animation */
-  @keyframes fadeIn {
-      0% {
-          opacity: 0;
-      }
+/* Fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
 
-      100% {
-          opacity: 1;
-      }
-  }
+    100% {
+        opacity: 1;
+    }
+}
 
-  /* Tech skill circles */
-  .bars-container {
-      display: flex;
-      justify-content: space-around;
-      width: 80%;
-      margin-top: 10px;
-      flex-wrap: wrap;
-      position: relative;
-      opacity: 0;
-      animation: fadeInBars 2s ease-in-out forwards;
-  }
+/* Tech skill circles */
+.bars-container {
+    display: flex;
+    justify-content: space-around;
+    width: 80%;
+    margin-top: 10px;
+    flex-wrap: wrap;
+    position: relative;
+    opacity: 0;
+    animation: fadeInBars 2s ease-in-out forwards;
+}
 
-  @keyframes fadeInBars {
-      0% {
-          opacity: 0;
-      }
+@keyframes fadeInBars {
+    0% {
+        opacity: 0;
+    }
 
-      100% {
-          opacity: 1;
-      }
-  }
+    100% {
+        opacity: 1;
+    }
+}
 
-  .bar {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      background-color: white;
-      animation: growCircle 2s ease-in-out forwards;
-      margin: 5px;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-  }
+.bar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+    animation: growCircle 2s ease-in-out forwards;
+    margin: 5px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    box-shadow: inset 0px -10px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.5s ease, box-shadow 0.5s ease, width 0.5s ease, height 0.5s ease;
+}
 
-  .bar span {
-      position: absolute;
-      text-align: center;
-      opacity: 0;
-      animation: fadeInText 1s ease-in-out forwards;
-      animation-delay: 2s;
-  }
+.bar::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+    z-index: -1;
+}
 
-  .design {
-      background-color: #e44d26;
-      animation-delay: 0.2s;
-  }
+.bar:hover {
+    transform: scale(1.2);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
 
-  .development {
-      background-color: #2965f1;
-      animation-delay: 0.4s;
-  }
+.bar span {
+    position: absolute;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInText 1s ease-in-out forwards;
+    animation-delay: 2s;
+}
 
-  .testing {
-      background-color: #f7df1e;
-      animation-delay: 0.6s;
-  }
+.design {
+    background-color: #e44d26;
+    animation-delay: 0.2s;
+}
 
-  .deployment {
-      background-color: #8cc84b;
-      animation-delay: 0.8s;
-  }
+.development {
+    background-color: #2965f1;
+    animation-delay: 0.4s;
+}
 
-  .maintenance {
-      background-color: #61dafb;
-      animation-delay: 1s;
-  }
+.testing {
+    background-color: #f7df1e;
+    animation-delay: 0.6s;
+}
 
-  .optimization {
-      background-color: #f0db4f;
-      animation-delay: 1.2s;
-  }
+.deployment {
+    background-color: #8cc84b;
+    animation-delay: 0.8s;
+}
 
-  @keyframes growCircle {
-      0% {
-          transform: scale(0);
-      }
+.maintenance {
+    background-color: #61dafb;
+    animation-delay: 1s;
+}
 
-      100% {
-          transform: scale(1);
-      }
-  }
+.optimization {
+    background-color: #f0db4f;
+    animation-delay: 1.2s;
+}
 
-  @keyframes fadeInText {
-      0% {
-          opacity: 0;
-      }
+@keyframes growCircle {
+    0% {
+        transform: scale(0);
+    }
 
-      100% {
-          opacity: 1;
-      }
-  }
+    100% {
+        transform: scale(1);
+    }
+}
 
-  /* Animated code section */
-  .code-snippet-container {
-      width: 60%;
-      animation: slideUp 3s ease-out forwards;
-      margin-top: 10px;
-      opacity: 0;
-      animation-delay: 2s;
-  }
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+    }
 
-  @keyframes slideUp {
-      0% {
-          transform: translateY(100px);
-          opacity: 0;
-      }
+    100% {
+        opacity: 1;
+    }
+}
 
-      100% {
-          transform: translateY(0);
-          opacity: 1;
-      }
-  }
+/* Animated code section */
+.code-snippet-container {
+    width: 60%;
+    animation: slideUp 3s ease-out forwards;
+    margin-top: 10px;
+    opacity: 0;
+    animation-delay: 2s;
+}
 
-  .code-snippet {
-      font-family: "Courier New", monospace;
-      background-color: rgba(11, 11, 11, 0.4);
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-      opacity: 0;
-      animation: fadeInCode 2s ease-in-out forwards;
-      min-height: 100px;
-      overflow-y: auto;
-      /* Scroll if content overflows */
-  }
+@keyframes slideUp {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
 
-  @keyframes fadeInCode {
-      0% {
-          opacity: 0;
-      }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
 
-      100% {
-          opacity: 1;
-      }
-  }
+.code-snippet {
+    font-family: "Courier New", monospace;
+    background-color: rgba(11, 11, 11, 0.4);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    animation: fadeInCode 2s ease-in-out forwards;
+    min-height: 100px;
+    overflow-y: auto;
+}
 
-  .code-snippet pre {
-      text-align: left;
-      white-space: pre-wrap;
-      word-wrap: break-word;
-      margin: 0;
-  }
+@keyframes fadeInCode {
+    0% {
+        opacity: 0;
+    }
 
-  .code-snippet span {
-      color: rgb(168, 201, 223);
-  }
+    100% {
+        opacity: 1;
+    }
+}
 
-  .code-snippet span.keyword {
-      color: #e44d26;
-  }
+.code-snippet pre {
+    text-align: left;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+}
 
-  /* Tech icons */
-  .tech-icons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      width: 100%;
-      margin-top: 10px;
-  }
+.code-snippet span {
+    color: rgb(168, 201, 223);
+}
 
-  .tech-icons .icon {
-      width: 60px;
-      height: 60px;
-      margin: 10px;
-      border-radius: 50%;
-      background-color: rgba(255, 255, 255, 0.3);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem;
-      color: white;
-      animation: scaleIcon 2s ease-in-out infinite;
-  }
+.code-snippet span.keyword {
+    color: #e44d26;
+}
 
-  @keyframes scaleIcon {
-      0% {
-          transform: scale(1);
-      }
+/* Tech icons */
+.tech-icons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-top: 10px;
+}
 
-      50% {
-          transform: scale(1.3);
-      }
+.tech-icons .icon {
+    width: 60px;
+    height: 60px;
+    margin: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+    animation: scaleIcon 2s ease-in-out infinite;
+}
 
-      100% {
-          transform: scale(1);
-      }
-  }
+@keyframes scaleIcon {
+    0% {
+        transform: scale(1);
+    }
 
-  /* Responsive design */
-  @media (max-width: 768px) {
-      .bars-container {
-          grid-template-columns: repeat(3, 1fr);
-          grid-gap: 20px;
-          display: grid;
-          justify-items: center;
-      }
+    50% {
+        transform: scale(1.3);
+    }
 
-      .bar {
-          width: 80px;
-          height: 80px;
-          margin: 10px;
-      }
+    100% {
+        transform: scale(1);
+    }
+}
 
-      .bar span {
-          font-size: 0.8rem;
-      }
+/* Responsive design */
+@media (max-width: 768px) {
+    .bars-container {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 20px;
+        display: grid;
+        justify-items: center;
+    }
 
-      h1 {
-          font-size: 1.5rem;
-      }
+    .bar {
+        width: 80px;
+        height: 80px;
+        margin: 10px;
+    }
 
-      .code-snippet-container {
-          width: 80%;
-      }
-  }
+    .bar span {
+        font-size: 0.8rem;
+    }
 
-  @media (max-width: 480px) {
-      h1 {
-          font-size: 1.2rem;
-      }
+    h1 {
+        font-size: 1.5rem;
+    }
 
-      .bars-container {
-          grid-template-columns: repeat(2, 1fr);
-      }
+    .code-snippet-container {
+        width: 80%;
+    }
+}
 
-      .bar {
-          width: 60px;
-          height: 60px;
-      }
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+    }
 
-      .code-snippet-container {
-          width: 100%;
-      }
+    .bars-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
 
-      .bar span {
-          font-size: 60%;
-      }
-  }
+    .bar {
+        width: 60px;
+        height: 60px;
+    }
+
+    .code-snippet-container {
+        width: 100%;
+    }
+
+    .bar span {
+        font-size: 60%;
+    }
+
+    /* Tech icons */
+    .tech-icons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .tech-icons .icon {
+        width: 30px;
+        height: 30px;
+        margin: 10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        color: white;
+        animation: scaleIcon 2s ease-in-out infinite;
+    }
+
+    .tech-icons .icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}
+
+.cover-frame {
+    transform: translateY(-72px);
+}
+
+.faq-container {
+    margin-top: 80px;
+    max-width: 800px;
+
+    text-align: center;
+}
+
+.faq-item {
+    background: #2c3e50;
+    color: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+    background: #34495e;
+}
+
+.faq-question {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.faq-answer-container {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    min-height: 50px;
+    border-left: 4px solid #3498db;
+}
+
+.faq-answer {
+    font-size: 0.8rem;
+    color: #333;
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .bars-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .bar {
+        width: 60px;
+        height: 60px;
+    }
+
+    .code-snippet-container {
+        width: 100%;
+    }
+
+    .bar span {
+        font-size: 60%;
+    }
+
+    /* Tech icons */
+    .tech-icons {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .tech-icons .icon {
+        width: 30px;
+        height: 30px;
+        margin: 10px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.3);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2rem;
+        color: white;
+        animation: scaleIcon 2s ease-in-out infinite;
+    }
+
+    .tech-icons .icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+}

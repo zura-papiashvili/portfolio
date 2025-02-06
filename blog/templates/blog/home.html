@@ -19,15 +19,29 @@
     });
 </script>
 
-<section class="cover">
-        <h1>{% trans "Web Development Portfolio" %}</h1>
+<section class="cover-frame">
+    <div class="cover">
+       
+        <!-- Frequently Asked Questions -->
+<div class="faq-container">
+    <!-- Questions -->
+    <div class="faq-item" onclick="showAnswer('{{ faqs.0.answer|escapejs }}')">
+        <h3 class="faq-question"><i class="fas fa-question-circle me-3"></i> {{ faqs.0.question }}</h3>
+    </div>
 
-        <!-- Code snippet animation -->
-        <div class="code-snippet-container">
-            <div class="code-snippet" id="code-snippet">
-            <pre></pre>
-            </div>
-        </div>
+    <div class="faq-item" onclick="showAnswer('{{ faqs.1.answer|escapejs }}')">
+        <h3 class="faq-question"><i class="fas fa-question-circle me-3"></i> {{ faqs.1.question }}</h3>
+    </div>
+
+    <div class="faq-item" onclick="showAnswer('{{ faqs.2.answer|escapejs }}')">
+        <h3 class="faq-question"><i class="fas fa-question-circle me-3"></i> {{ faqs.2.question }}</h3>
+    </div>
+
+    <!-- One shared answer box -->
+    <div class="faq-answer-container">
+        <p id="faq-answer" class="faq-answer"></p>
+    </div>
+</div>
 
         <!-- Tech skill circles -->
         <div class="bars-container">
@@ -49,7 +63,13 @@
             <div class="icon"><img src="https://img.icons8.com/color/48/000000/amazon-web-services.png" alt="AWS"></div>
             <div class="icon"><img src="https://img.icons8.com/color/48/000000/angularjs.png" alt="Angular"></div>
         </div>
-    </section>
+    </div>
+</section>
+
+<style>
+  
+</style>
+
 
     <!-- Services Section -->
     <div class="container mt-5">

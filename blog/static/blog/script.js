@@ -71,3 +71,20 @@ accordions.forEach((accordion) => {
 });
 
 
+function showAnswer(text) {
+    let answerBox = document.getElementById("faq-answer");
+
+    // Clear the previous text before typing the new one
+    answerBox.innerHTML = "";
+
+    let i = 0;
+    function typeEffect() {
+        if (i < text.length) {
+            answerBox.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(typeEffect, 50); // Adjust typing speed
+        }
+    }
+
+    typeEffect();
+}
