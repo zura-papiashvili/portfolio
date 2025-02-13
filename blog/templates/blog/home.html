@@ -29,7 +29,7 @@
     <div class="content-container">
         <div class="left-section">
             <div class="faq-container">
-                {% for faq in faqs|slice:":3" %}
+                {% for faq in faqs_main %}
                 <div class="faq-item" onclick="showAnswer('{{ faq.answer|escapejs }}')">
                     <h3 class="faq-question"><i class="fas fa-question-circle me-3"></i> {{ faq.question }}</h3>
                 </div>

@@ -116,6 +116,7 @@ class Comment(models.Model):
 class FAQ(models.Model):
     question = models.CharField(max_length=100, verbose_name=_("Question"))
     answer = models.TextField(max_length=400, verbose_name=_("Answer"))
+    main = models.BooleanField(default=False, verbose_name=_("Main FAQ"))
 
     def __str__(self):
         return self.question

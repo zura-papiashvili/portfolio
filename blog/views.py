@@ -17,6 +17,7 @@ def home(request):
     language = get_language()  # or request.LANGUAGE_CODE
     events = ZoomEvent.objects.filter(access_type="public").all()
     faqs = FAQ.objects.exclude(**{f"question_{language}": ""}).all()
+    faqs_main = faqs.filter(main=True).exclude(**{f"question_{language}": ""})[:3]
     authors = Author.objects.all()[:3]
     services = Service.objects.exclude(**{f"title_{language}": ""}).all()[:3]
     projects = Project.objects.exclude(**{f"name_{language}": ""}).all()[:3]
@@ -27,6 +28,7 @@ def home(request):
         "blog/home.html",
         {
             "faqs": faqs,
+            "faqs_main": faqs_main,
             "authors": authors,
             "events": events,
             "projects": projects,

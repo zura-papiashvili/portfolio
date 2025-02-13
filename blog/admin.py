@@ -40,8 +40,8 @@ class CommentAdmin(admin.ModelAdmin):
 
 @admin.register(FAQ)
 class FAQAdmin(TranslationAdmin):
-    list_display = ("question", "answer")  # Display translated fields
-    search_fields = ("question", "answer")  # Enable search functionality
+    list_display = ("question", "answer", "main")  # Display translated fields
+    search_fields = ("question", "answer", "main")  # Enable search functionality
 
 
 class CarouselImageInline(admin.TabularInline):
