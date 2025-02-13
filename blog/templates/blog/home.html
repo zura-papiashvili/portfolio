@@ -8,7 +8,7 @@
 <!-- Include AOS CSS -->
 <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <!-- Include custom CSS -->
-<link href="{% static 'blog/cover.css' %}" rel="stylesheet">
+{% comment %} <link href="{% static 'blog/cover.css' %}" rel="stylesheet"> {% endcomment %}
 <link href="{% static 'blog/projects.css' %}" rel="stylesheet">
 
 <!-- Include custom JavaScript -->
@@ -18,53 +18,41 @@
         duration: 2000,  // Animation speed
     });
 </script>
+<style>
 
-<section class="cover-frame">
-    <div class="cover">
-       
-        <!-- Frequently Asked Questions -->
-<div class="faq-container">
-    <!-- Questions -->
-    <div class="faq-item" onclick="showAnswer('{{ faqs.0.answer|escapejs }}')">
-        <h3 class="faq-question"><i class="fas fa-question-circle me-3"></i> {{ faqs.0.question }}</h3>
-    </div>
+</style>
 
-    <div class="faq-item" onclick="showAnswer('{{ faqs.1.answer|escapejs }}')">
-        <h3 class="faq-question"><i class="fas fa-question-circle me-3"></i> {{ faqs.1.question }}</h3>
-    </div>
+<section>
+    <img src="{% static 'blog/images/cover.png' %}" alt="Cover Image" class="cover-image">
 
-    <div class="faq-item" onclick="showAnswer('{{ faqs.2.answer|escapejs }}')">
-        <h3 class="faq-question"><i class="fas fa-question-circle me-3"></i> {{ faqs.2.question }}</h3>
-    </div>
+    <div class="content-container">
+        <div class="left-section">
+            <div class="faq-container">
+                {% for faq in faqs|slice:":3" %}
+                <div class="faq-item" onclick="showAnswer('{{ faq.answer|escapejs }}')">
+                    <h3 class="faq-question"><i class="fas fa-question-circle me-3"></i> {{ faq.question }}</h3>
+                </div>
+                {% endfor %}
 
-    <!-- One shared answer box -->
-    <div class="faq-answer-container">
-        <p id="faq-answer" class="faq-answer"></p>
-    </div>
-</div>
+                <div class="faq-answer-container">
+                    <p id="faq-answer" class="faq-answer"></p>
+                </div>
 
-        <!-- Tech skill circles -->
-        <div class="bars-container">
-            <div class="bar design"><span>{% trans "Design" %}</span></div>
-            <div class="bar development"><span>{% trans "Development" %}</span></div>
-            <div class="bar testing"><span>{% trans "Testing" %}</span></div>
-            <div class="bar deployment"><span>{% trans "Deployment" %}</span></div>
-            <div class="bar maintenance"><span>{% trans "Maintenance" %}</span></div>
-            <div class="bar optimization"><span>{% trans "Optimization" %}</span></div>
+                <div class="gradient-line"></div>
+            </div>
         </div>
 
-        <!-- Tech icons -->
-        <div class="tech-icons">
-            <div class="icon"><img src="https://img.icons8.com/color/48/000000/html-5.png" alt="HTML"></div>
-            <div class="icon"><img src="https://img.icons8.com/color/48/000000/css3.png" alt="CSS"></div>
-            <div class="icon"><img src="https://img.icons8.com/color/48/000000/javascript.png" alt="JavaScript"></div>
-            <div class="icon"><img src="https://img.icons8.com/color/48/000000/django.png" alt="Django"></div>
-            <div class="icon"><img src="https://img.icons8.com/color/48/000000/nestjs.png" alt="NestJS"></div>
-            <div class="icon"><img src="https://img.icons8.com/color/48/000000/amazon-web-services.png" alt="AWS"></div>
-            <div class="icon"><img src="https://img.icons8.com/color/48/000000/angularjs.png" alt="Angular"></div>
+        <div class="right-section">
+            <img src="{% static 'images/logo.png' %}" alt="Author Image">
+            <p>Llevandonos al <br> siguiente nivel</p>
         </div>
     </div>
 </section>
+
+<script>
+   
+</script>
+
 
 <style>
   
