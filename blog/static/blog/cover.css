@@ -1,427 +1,106 @@
-/* Reset styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body,
-html {
-    height: 100%;
-    font-family: Arial, sans-serif;
-}
-
-/* Full-screen cover section */
-.cover {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(45deg, #3498db, #8e44ad);
-    color: white;
-    text-align: center;
-    padding: 20px;
-}
-
-h1 {
-    font-size: 2rem;
-    animation: fadeIn 3s ease-in-out;
-    margin-bottom: 10px;
-}
-
-/* Fade-in animation */
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Tech skill circles */
-.bars-container {
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-    margin-top: 10px;
-    flex-wrap: wrap;
-    position: relative;
-    opacity: 0;
-    animation: fadeInBars 2s ease-in-out forwards;
-}
-
-@keyframes fadeInBars {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-.bar {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    background-color: white;
-    animation: growCircle 2s ease-in-out forwards;
-    margin: 5px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 0.9rem;
-    box-shadow: inset 0px -10px 10px rgba(0, 0, 0, 0.2);
-    transition: transform 0.5s ease, box-shadow 0.5s ease, width 0.5s ease, height 0.5s ease;
-}
-
-.bar::before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    top: 5px;
-    left: 5px;
-    z-index: -1;
-}
-
-.bar:hover {
-    transform: scale(1.2);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
-}
-
-.bar span {
-    position: absolute;
-    text-align: center;
-    opacity: 0;
-    animation: fadeInText 1s ease-in-out forwards;
-    animation-delay: 2s;
-}
-
-.design {
-    background-color: #e44d26;
-    animation-delay: 0.2s;
-}
-
-.development {
-    background-color: #2965f1;
-    animation-delay: 0.4s;
-}
-
-.testing {
-    background-color: #f7df1e;
-    animation-delay: 0.6s;
-}
-
-.deployment {
-    background-color: #8cc84b;
-    animation-delay: 0.8s;
-}
-
-.maintenance {
-    background-color: #61dafb;
-    animation-delay: 1s;
-}
-
-.optimization {
-    background-color: #f0db4f;
-    animation-delay: 1.2s;
-}
-
-@keyframes growCircle {
-    0% {
-        transform: scale(0);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-@keyframes fadeInText {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-/* Animated code section */
-.code-snippet-container {
-    width: 60%;
-    animation: slideUp 3s ease-out forwards;
-    margin-top: 10px;
-    opacity: 0;
-    animation-delay: 2s;
-}
-
-@keyframes slideUp {
-    0% {
-        transform: translateY(100px);
-        opacity: 0;
-    }
-
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.code-snippet {
-    font-family: "Courier New", monospace;
-    background-color: rgba(11, 11, 11, 0.4);
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    opacity: 0;
-    animation: fadeInCode 2s ease-in-out forwards;
-    min-height: 100px;
-    overflow-y: auto;
-}
-
-@keyframes fadeInCode {
-    0% {
-        opacity: 0;
-    }
-
-    100% {
-        opacity: 1;
-    }
-}
-
-.code-snippet pre {
-    text-align: left;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-    margin: 0;
-}
-
-.code-snippet span {
-    color: rgb(168, 201, 223);
-}
-
-.code-snippet span.keyword {
-    color: #e44d26;
-}
-
-/* Tech icons */
-.tech-icons {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    width: 100%;
-    margin-top: 10px;
-}
-
-.tech-icons .icon {
-    width: 60px;
-    height: 60px;
-    margin: 10px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.3);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    color: white;
-    animation: scaleIcon 2s ease-in-out infinite;
-}
-
-@keyframes scaleIcon {
-    0% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.3);
-    }
-
-    100% {
-        transform: scale(1);
-    }
-}
-
-/* Responsive design */
-@media (max-width: 768px) {
-    .bars-container {
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 20px;
-        display: grid;
-        justify-items: center;
-    }
-
-    .bar {
-        width: 80px;
-        height: 80px;
-        margin: 10px;
-    }
-
-    .bar span {
-        font-size: 0.8rem;
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
-
-    .code-snippet-container {
-        width: 80%;
-    }
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.2rem;
-    }
-
-    .bars-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .bar {
-        width: 60px;
-        height: 60px;
-    }
-
-    .code-snippet-container {
+    .cover-image {
+        margin-top: -75px;
         width: 100%;
+        height: 40vh;
+        object-fit: cover;
+        object-position: 50% 30%;
     }
 
-    .bar span {
-        font-size: 60%;
+    .faq-container {
+        padding: 10px;
     }
 
-    /* Tech icons */
-    .tech-icons {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        width: 100%;
-        margin-top: 10px;
+    .faq-item {
+        cursor: pointer;
+        margin-bottom: 10px;
+        padding: 5px;
+        background-color: #f5f5f5;
+        border-radius: 5px;
+        transition: background 0.3s ease;
     }
 
-    .tech-icons .icon {
-        width: 30px;
+    .faq-item:hover {
+        background-color: #e0e0e0;
+    }
+
+    .faq-answer-container {
+        margin-top: 20px;
+        padding: 10px;
+        background-color: #fff3cd;
+        border-left: 4px solid #ffb923;
+        display: none;
+    }
+
+    .gradient-line {
+        position: absolute;
+        bottom: 5px;
         height: 30px;
-        margin: 10px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.3);
+        width: calc(70% - 30px);
+        background: linear-gradient(to right, #ffb923, transparent);
+        margin: 20px auto;
+    }
+
+    .content-container {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        font-size: 2rem;
-        color: white;
-        animation: scaleIcon 2s ease-in-out infinite;
-    }
-
-    .tech-icons .icon img {
         width: 100%;
-        height: 100%;
-        object-fit: contain;
-    }
-}
-
-.cover-frame {
-    transform: translateY(-72px);
-}
-
-.faq-container {
-    margin-top: 80px;
-    max-width: 800px;
-
-    text-align: center;
-}
-
-.faq-item {
-    background: #2c3e50;
-    color: white;
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.faq-item:hover {
-    background: #34495e;
-}
-
-.faq-question {
-    margin: 0;
-    font-size: 0.8rem;
-}
-
-.faq-answer-container {
-    background: #f9f9f9;
-    padding: 15px;
-    border-radius: 10px;
-    margin-top: 20px;
-    min-height: 50px;
-    border-left: 4px solid #3498db;
-}
-
-.faq-answer {
-    font-size: 0.8rem;
-    color: #333;
-}
-
-@media (max-width: 480px) {
-    h1 {
-        font-size: 1.2rem;
-    }
-
-    .bars-container {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .bar {
-        width: 60px;
-        height: 60px;
-    }
-
-    .code-snippet-container {
-        width: 100%;
-    }
-
-    .bar span {
-        font-size: 60%;
-    }
-
-    /* Tech icons */
-    .tech-icons {
-        display: flex;
-        justify-content: center;
+        height: 65vh;
+        justify-content: space-between;
         flex-wrap: wrap;
-        width: 100%;
-        margin-top: 10px;
     }
 
-    .tech-icons .icon {
-        width: 30px;
-        height: 30px;
-        margin: 10px;
-        border-radius: 50%;
-        background-color: rgba(255, 255, 255, 0.3);
+    .left-section {
+        width: 70%;
+        background-color: rgb(255, 255, 255);
+        padding: 10px;
+    }
+
+    .right-section {
+        margin-top: -20px;
+        width: 30%;
+        background-color: #ffb923;
+        position: relative;
         display: flex;
-        justify-content: center;
         align-items: center;
-        font-size: 2rem;
-        color: white;
-        animation: scaleIcon 2s ease-in-out infinite;
+        justify-content: center;
+        flex-direction: column;
+        padding: 20px;
     }
 
-    .tech-icons .icon img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
+    .right-section img {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 70%;
+        object-fit: cover;
     }
-}
+
+    .right-section p {
+        position: absolute;
+        font-size: 2rem;
+        color: black;
+        text-align: left;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        .content-container {
+            flex-direction: column;
+            height: auto;
+        }
+
+        .left-section,
+        .right-section {
+            width: 100%;
+        }
+
+        .right-section {
+            display: none;
+        }
+
+        .gradient-line {
+            position: relative;
+            width: 100%;
+        }
+    }
