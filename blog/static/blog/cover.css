@@ -8,6 +8,7 @@
 
     .faq-container {
         padding: 10px;
+        color: black;
     }
 
     .faq-item {
@@ -29,6 +30,7 @@
         background-color: #fff3cd;
         border-left: 4px solid #ffb923;
         display: none;
+        color: black
     }
 
     .gradient-line {
@@ -43,14 +45,14 @@
     .content-container {
         display: flex;
         width: 100%;
-        height: 65vh;
+        height: 60vh;
         justify-content: space-between;
         flex-wrap: wrap;
     }
 
     .left-section {
         width: 70%;
-        background-color: rgb(255, 255, 255);
+        background-color: rgba(255, 255, 255, 0);
         padding: 10px;
     }
 
@@ -86,6 +88,7 @@
     /* Responsive adjustments */
     @media (max-width: 768px) {
         .content-container {
+            margin-top: -75px;
             flex-direction: column;
             height: auto;
         }

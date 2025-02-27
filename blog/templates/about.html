@@ -1,10 +1,46 @@
 {% extends "base.html" %}
+{% load static %}
+
+{% block title %}About{% endblock %}
 
 {% block content %}
-<h1> Acerca de </h1>
-<p> Somos una organización que se dedica a la creación de contenido educativo en línea. Nuestro objetivo es proporcionar a los estudiantes una plataforma para aprender y mejorar sus habilidades en diferentes campos. </p>
-<h2> Nuestro Equipo </h2>
+  <link href="{% static 'blog/about.css' %}" rel="stylesheet">
+    <style>
+            .about-img {
+            width: 100%;
+            height: 50vh;
+            /* Adjust height for smaller screens */
+            background: url("{% static 'blog/images/about.avif' %}") no-repeat center center/cover;
+        }
+        @media (min-width: 768px) {
+
+     .about-img {
+         width: 40vw;
+         height: auto;
+         /* Adjust height for larger screens */
+     }
+
+ }
+    </style>
+
+<section class="about">
+    <div class="about-container">
+        <div class="about-img"></div>
+        <div class="about-content">
+
+            <h1>Sobre nosotros</h1>
+            <p>Somos creadores digitales, un mercado en línea para empresas, compañías, organizaciones, entidades, corporaciones, firmas y más.</p>
+            <p>Presenta con facilidad y sorprende a tu público con presentaciones impactantes. Elige entre más de mil diseños profesionales adaptados a cualquier objetivo. Personaliza tu website con tus textos, logos, fotos, videos y audios.</p>
+
+        </div>
+        <div class="about-column-line"></div>
+    </div>
+</section>
+
 <div class="container">
+    <br>
+        <h2>Nuestro Equipo</h2>
+    <br>
     <div class="row">
         {% for author in authors %}
             <div class="col-md-4 d-flex align-items-stretch">
