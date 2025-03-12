@@ -62,13 +62,13 @@
 
     <!-- Services Section -->
     <div class="container mt-5">
-        <h2 class="text-center mb-4 text-primary" data-aos="fade-up">{% trans "Our Services" %}</h2>
+        <h2 class="text-center mb-4 text-dark" data-aos="fade-up">{% trans "Our Services" %}</h2>
         <div class="row">
             {% for service in services %}
             <div class="col-md-4 mb-4 d-flex align-items-stretch" data-aos="fade-up">
                 <div class="card shadow border-0 w-100" style="border-radius: 15px; overflow: hidden;">
                     <div class="card-body p-4 d-flex flex-column">
-                        <h3 class="card-title text-primary fw-bold">{{ service.title }}</h3>
+                        <h3 class="card-title text-dark fw-bold">{{ service.title }}</h3>
                         <p class="card-text text-muted">{{ service.description }}</p>
                         <p class="card-text"><strong>{% trans "Price Range:" %}</strong> {{ service.price_range }}</p>
                         <p class="card-text"><strong>{% trans "Features:" %}</strong></p>
@@ -95,7 +95,7 @@
     </div>
 
 <div class="container py-5">
-    <h1 class="text-center text-primary mb-4" data-aos="fade-up">Our Projects</h1>
+    <h1 class="text-center text-dark mb-4" data-aos="fade-up">Our Projects</h1>
     
     <div class="row g-4 d-flex align-items-stretch">
         {% for project in projects %}
@@ -137,7 +137,7 @@
 
 <!-- FAQ Section with Enhanced Styles and JavaScript -->
 <div class="container mt-5">
-    <h2 class="text-center mb-4 text-primary" data-aos="fade-up">{% trans "Frequently Asked Questions" %}</h2>
+    <h2 class="text-center mb-4 text-dark" data-aos="fade-up">{% trans "Frequently Asked Questions" %}</h2>
     <div class="accordion" id="faqAccordion">
     {% for faq in faqs %}
         <div class="accordion-item mb-4 shadow-lg rounded-3" data-aos="fade-right">
@@ -158,14 +158,14 @@
 
 <!-- Authors Section -->
 <div class="container mt-5">
-    <h2 class="text-center mb-4 text-primary" data-aos="fade-up">{% trans "Featured Authors" %}</h2>
+    <h2 class="text-center mb-4 text-dark" data-aos="fade-up">{% trans "Featured Authors" %}</h2>
     <div class="row">
     {% for author in authors %}
         <div class="col-md-4 mb-4 d-flex align-items-stretch" data-aos="fade-up">
         <div class="card shadow border-0 w-100 fade-up" style="border-radius: 15px; overflow: hidden;">
             <div class="card-body p-4 d-flex flex-column text-center">
             <img src="{{ author.image.url }}" class="rounded-circle mb-3" alt="{{ author.first_name }} {{ author.last_name }}" style="width: 100px; height: 100px; object-fit: cover;">
-            <h3 class="card-title text-primary fw-bold">{{ author.first_name }} {{ author.last_name }}</h3>
+            <h3 class="card-title text-dark fw-bold">{{ author.first_name }} {{ author.last_name }}</h3>
             <p class="card-text text-muted">{{ author.bio }}</p>
             <div class="mt-auto">
                 <!-- Add any additional content here if needed -->
@@ -186,13 +186,13 @@
 
 
 <div class="container mt-5">
-    <h2 class="text-center mb-4 text-primary" data-aos="fade-up">{% trans "Upcoming Meetings" %}</h2>
+    <h2 class="text-center mb-4 text-dark" data-aos="fade-up">{% trans "Upcoming Meetings" %}</h2>
     <div class="row">
         {% for meeting in events %}
         <div class="col-md-4 mb-4 d-flex align-items-stretch" data-aos="fade-up">
         <div class="card shadow border-0 w-100 fade-up" style="border-radius: 15px; overflow: hidden;">
             <div class="card-body p-4 d-flex flex-column">
-            <h3 class="card-title text-primary fw-bold">{{ meeting.title }}</h3>
+            <h3 class="card-title text-dark fw-bold">{{ meeting.title }}</h3>
             <p class="card-text text-muted">{{ meeting.description }}</p>
             <p class="card-text"><strong>{% trans "Type:" %}</strong> {{ meeting.type }}</p>
             <p class="card-text"><strong>{% trans "Access:" %}</strong> {{ meeting.access_type }}</p>
