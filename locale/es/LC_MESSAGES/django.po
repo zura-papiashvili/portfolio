@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-05 09:46-0500\n"
+"POT-Creation-Date: 2025-04-22 12:51-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,15 +19,15 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
 "1 : 2;\n"
 
-#: .\portfolio\settings.py:134 .\templates\base.html:70
+#: .\portfolio\settings.py:134 .\templates\base.html:65
 msgid "English"
 msgstr "Inglés"
 
-#: .\portfolio\settings.py:135 .\templates\base.html:71
+#: .\portfolio\settings.py:135 .\templates\base.html:66
 msgid "Spanish"
 msgstr "Español"
 
-#: .\portfolio\settings.py:136 .\templates\base.html:72
+#: .\portfolio\settings.py:136
 msgid "Georgian"
 msgstr "Georgiano"
 
@@ -51,25 +51,23 @@ msgstr "Acerca de"
 msgid "Products"
 msgstr ""
 
-#: .\templates\base.html:56
-msgid "For Members"
-msgstr "Para Miembros"
-
-#: .\templates\base.html:59
-msgid "Videos"
-msgstr "Videos"
-
-#: .\templates\base.html:62
+#: .\templates\base.html:57
 msgid "Contact"
 msgstr "Contacto"
 
-#: .\templates\base.html:67
+#: .\templates\base.html:62
 msgid "Language"
 msgstr "Idioma"
 
-#: .\templates\base.html:97
+#: .\templates\base.html:101
 msgid "Smart Route Inc. All Rights Reserved."
 msgstr "Smart Route Inc. Todos los Derechos Reservados."
+
+#~ msgid "For Members"
+#~ msgstr "Para Miembros"
+
+#~ msgid "Videos"
+#~ msgstr "Videos"
 
 #~ msgid "Events"
 #~ msgstr "Eventos"

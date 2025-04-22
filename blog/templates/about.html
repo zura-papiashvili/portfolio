@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load i18n %}
 
 {% block title %}About{% endblock %}
 
@@ -28,9 +29,10 @@
         <div class="about-img"></div>
         <div class="about-content">
 
-            <h1>Sobre nosotros</h1>
-            <p>Somos creadores digitales, un mercado en línea para empresas, compañías, organizaciones, entidades, corporaciones, firmas y más.</p>
-            <p>Presenta con facilidad y sorprende a tu público con presentaciones impactantes. Elige entre más de mil diseños profesionales adaptados a cualquier objetivo. Personaliza tu website con tus textos, logos, fotos, videos y audios.</p>
+            
+            <h1>{% trans "About Us" %}</h1>
+            <p>{% trans "We are digital creators, an online marketplace for businesses, companies, organizations, entities, corporations, firms, and more." %}</p>
+            <p>{% trans "Easily present and impress your audience with impactful presentations. Choose from over a thousand professional designs tailored to any goal. Customize your website with your texts, logos, photos, videos, and audios." %}</p>
 
         </div>
         <div class="about-column-line"></div>
@@ -39,7 +41,7 @@
 
 <div class="container">
     <br>
-        <h2>Nuestro Equipo</h2>
+    <h2>{% trans "Our Team" %}</h2>
     <br>
     <div class="row">
         {% for author in authors %}

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-02-05 09:46-0500\n"
+"POT-Creation-Date: 2025-04-22 12:56-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,7 +19,7 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
 "1 : 2;\n"
 
-#: .\blog\models.py:9 .\blog\models.py:212
+#: .\blog\models.py:9 .\blog\models.py:213
 msgid "Product Name"
 msgstr "Nombre del Producto"
 
@@ -43,7 +43,7 @@ msgstr "Apellido"
 msgid "Email Address"
 msgstr "Dirección de Correo Electrónico"
 
-#: .\blog\models.py:41 .\blog\models.py:154 .\blog\models.py:219
+#: .\blog\models.py:41 .\blog\models.py:155 .\blog\models.py:220
 msgid "Image"
 msgstr "Imagen"
 
@@ -59,8 +59,8 @@ msgstr "Autor"
 msgid "Authors"
 msgstr "Autores"
 
-#: .\blog\models.py:66 .\blog\models.py:131 .\blog\models.py:172
-#: .\blog\models.py:187
+#: .\blog\models.py:66 .\blog\models.py:132 .\blog\models.py:173
+#: .\blog\models.py:188
 msgid "Title"
 msgstr "Título"
 
@@ -72,15 +72,15 @@ msgstr "Extracto"
 msgid "Date"
 msgstr "Fecha"
 
-#: .\blog\models.py:71 .\blog\models.py:195
+#: .\blog\models.py:71 .\blog\models.py:196
 msgid "Public"
 msgstr "Público"
 
-#: .\blog\models.py:71 .\blog\models.py:195
+#: .\blog\models.py:71 .\blog\models.py:196
 msgid "Private"
 msgstr "Privado"
 
-#: .\blog\models.py:73 .\blog\models.py:197
+#: .\blog\models.py:73 .\blog\models.py:198
 msgid "Access Type"
 msgstr "Tipo de Acceso"
 
@@ -92,7 +92,7 @@ msgstr "Slug"
 msgid "YouTube URL"
 msgstr "URL de YouTube"
 
-#: .\blog\models.py:78 .\blog\models.py:173
+#: .\blog\models.py:78 .\blog\models.py:174
 msgid "Content"
 msgstr "Contenido"
 
@@ -124,195 +124,266 @@ msgstr "Pregunta"
 msgid "Answer"
 msgstr "Respuesta"
 
-#: .\blog\models.py:124
+#: .\blog\models.py:119
+msgid "Main FAQ"
+msgstr "Preguntas Frecuentes Principales"
+
+#: .\blog\models.py:125
 msgid "FAQ"
 msgstr "Preguntas Frecuentes"
 
-#: .\blog\models.py:125
+#: .\blog\models.py:126
 msgid "FAQs"
 msgstr "Preguntas Frecuentes"
 
-#: .\blog\models.py:133 .\blog\models.py:199 .\blog\models.py:213
+#: .\blog\models.py:134 .\blog\models.py:200 .\blog\models.py:214
 msgid "Description"
 msgstr "Descripción"
 
-#: .\blog\models.py:140 .\blog\models.py:150
+#: .\blog\models.py:141 .\blog\models.py:151
 msgid "Carousel"
 msgstr "Carrusel"
 
-#: .\blog\models.py:141
+#: .\blog\models.py:142
 msgid "Carousels"
 msgstr "Carruseles"
 
-#: .\blog\models.py:158
+#: .\blog\models.py:159
 msgid "Caption"
 msgstr "Subtítulo"
 
-#: .\blog\models.py:161
+#: .\blog\models.py:162
 msgid "URL"
 msgstr "URL"
 
-#: .\blog\models.py:167
+#: .\blog\models.py:168
 msgid "Carousel Image"
 msgstr "Imagen del Carrusel"
 
-#: .\blog\models.py:168
+#: .\blog\models.py:169
 msgid "Carousel Images"
 msgstr "Imágenes del Carrusel"
 
-#: .\blog\models.py:175
+#: .\blog\models.py:176
 msgid "Access Code"
 msgstr "Código de Acceso"
 
-#: .\blog\models.py:182
+#: .\blog\models.py:183
 msgid "Restricted Page"
 msgstr "Página Restringida"
 
-#: .\blog\models.py:183
+#: .\blog\models.py:184
 msgid "Restricted Pages"
 msgstr "Páginas Restringidas"
 
-#: .\blog\models.py:190
+#: .\blog\models.py:191
 msgid "Webinar"
 msgstr "Webinario"
 
-#: .\blog\models.py:190
+#: .\blog\models.py:191
 msgid "Workshop"
 msgstr "Taller"
 
-#: .\blog\models.py:191
+#: .\blog\models.py:192
 msgid "Type"
 msgstr "Tipo"
 
-#: .\blog\models.py:200
+#: .\blog\models.py:201
 msgid "Event Time"
 msgstr "Hora del Evento"
 
-#: .\blog\models.py:201
+#: .\blog\models.py:202
 msgid "Zoom Link"
 msgstr "Enlace de Zoom"
 
-#: .\blog\models.py:207
+#: .\blog\models.py:208
 msgid "Zoom Event"
 msgstr "Evento de Zoom"
 
-#: .\blog\models.py:208
+#: .\blog\models.py:209
 msgid "Zoom Events"
 msgstr "Eventos de Zoom"
 
-#: .\blog\models.py:215
+#: .\blog\models.py:216
 msgid "Price"
-msgstr ""
+msgstr "Precio"
 
-#: .\blog\models.py:222
+#: .\blog\models.py:223
 msgid "Available"
-msgstr ""
-
-#: .\blog\models.py:228
-#, fuzzy
-#| msgid "Product Name"
-msgid "Web Product"
-msgstr "Nombre del Producto"
+msgstr "Disponible"
 
 #: .\blog\models.py:229
+msgid "Web Product"
+msgstr "Producto Web"
+
+#: .\blog\models.py:230
 msgid "Web Products"
-msgstr ""
+msgstr "Productos Web"
 
-#: .\blog\templates\blog\home.html:23
-msgid "Web Development Portfolio"
-msgstr "Portafolio de Desarrollo Web"
+#: .\blog\templates\about.html:34
+msgid "About Us"
+msgstr "Sobre nosotros"
 
-#: .\blog\templates\blog\home.html:34
-msgid "Design"
-msgstr "Diseño"
+#: .\blog\templates\about.html:35
+msgid ""
+"We are digital creators, an online marketplace for businesses, companies, "
+"organizations, entities, corporations, firms, and more."
+msgstr "Somos creadores digitales, un mercado en línea para empresas, compañías, organizaciones, entidades, corporaciones, firmas y más."
 
-#: .\blog\templates\blog\home.html:35
-msgid "Development"
-msgstr "Desarrollo"
+#: .\blog\templates\about.html:36
+msgid ""
+"Easily present and impress your audience with impactful presentations. "
+"Choose from over a thousand professional designs tailored to any goal. "
+"Customize your website with your texts, logos, photos, videos, and audios."
+msgstr "Presenta con facilidad y sorprende a tu público con presentaciones impactantes. Elige entre más de mil diseños profesionales adaptados a cualquier objetivo. Personaliza tu website con tus textos, logos, fotos, videos y audios."
 
-#: .\blog\templates\blog\home.html:36
-msgid "Testing"
-msgstr "Pruebas"
-
-#: .\blog\templates\blog\home.html:37
-msgid "Deployment"
-msgstr "Despliegue"
-
-#: .\blog\templates\blog\home.html:38
-msgid "Maintenance"
-msgstr "Mantenimiento"
-
-#: .\blog\templates\blog\home.html:39
-msgid "Optimization"
-msgstr "Optimización"
-
-#: .\blog\templates\blog\home.html:56
-msgid "Our Services"
-msgstr ""
-
-#: .\blog\templates\blog\home.html:64
-msgid "Price Range:"
-msgstr ""
+#: .\blog\templates\about.html:45
+msgid "Our Team"
+msgstr "Nuestro Equipo"
 
 #: .\blog\templates\blog\home.html:65
-#, fuzzy
-#| msgid "Featured Authors"
+msgid "Our Services"
+msgstr "Nuestros Servicios"
+
+#: .\blog\templates\blog\home.html:73
+msgid "Price Range:"
+msgstr "Rango de Precios:"
+
+#: .\blog\templates\blog\home.html:74
 msgid "Features:"
-msgstr "Nuestra Equipo"
+msgstr "Características:"
 
-#: .\blog\templates\blog\home.html:71
+#: .\blog\templates\blog\home.html:80
 msgid "Ideal For:"
-msgstr ""
+msgstr "Ideal Para:"
 
-#: .\blog\templates\blog\home.html:82
-#, fuzzy
-#| msgid "No meetings available."
+#: .\blog\templates\blog\home.html:91
 msgid "No services available."
-msgstr "No hay reuniones disponibles."
+msgstr "No hay servicios disponibles."
+
+#: .\blog\templates\blog\home.html:98
+msgid "Our Projects"
+msgstr "Nuestros Proyectos"
+
+#: .\blog\templates\blog\home.html:109
+msgid "Customer:"
+msgstr "Cliente:"
+
+#: .\blog\templates\blog\home.html:111
+msgid "Start Date:"
+msgstr "Fecha de Inicio:"
+
+#: .\blog\templates\blog\home.html:113
+#, fuzzy
+#| msgid "Date"
+msgid "End Date:"
+msgstr "Fecha de Finalización"
+
+#: .\blog\templates\blog\home.html:115
+msgid "Budget:"
+msgstr "Presupuesto:"
+
+#: .\blog\templates\blog\home.html:117
+msgid "Cost:"
+msgstr "Costo:"
+
+#: .\blog\templates\blog\home.html:123
+msgid "🔗 See Website"
+msgstr "🔗 Ver Sitio Web"
 
 #: .\blog\templates\blog\home.html:131
+msgid "No projects found."
+msgstr "No se encontraron proyectos."
+
+#: .\blog\templates\blog\home.html:142
 msgid "Frequently Asked Questions"
 msgstr "Preguntas Frecuentes"
 
-#: .\blog\templates\blog\home.html:152
+#: .\blog\templates\blog\home.html:163
 msgid "Featured Authors"
 msgstr "Nuestra Equipo"
 
-#: .\blog\templates\blog\home.html:169
+#: .\blog\templates\blog\home.html:180
 msgid "Authors not available."
 msgstr "miembros no disponibles."
 
-#: .\blog\templates\blog\home.html:174
+#: .\blog\templates\blog\home.html:185
 msgid "See All Authors"
 msgstr "Ver Todos los miembros"
 
-#: .\blog\templates\blog\home.html:181
-msgid "Upcoming Meetings"
-msgstr "Próximas Reuniones"
+#: .\blog\templates\contact.html:11
+msgid "Contact Us"
+msgstr "Contáctenos"
 
-#: .\blog\templates\blog\home.html:189
-msgid "Type:"
-msgstr "Tipo:"
+#: .\blog\templates\contact.html:24
+msgid "Name:"
+msgstr "Nombre:"
 
-#: .\blog\templates\blog\home.html:190
-msgid "Access:"
-msgstr "Acceso:"
+#: .\blog\templates\contact.html:25
+msgid "Your name"
+msgstr "Tu nombre"
 
-#: .\blog\templates\blog\home.html:191
-msgid "Date and Time:"
-msgstr "Fecha y Hora:"
+#: .\blog\templates\contact.html:35
+msgid "Email:"
+msgstr "Correo Electrónico:"
 
-#: .\blog\templates\blog\home.html:192
-msgid "Join the Meeting"
-msgstr "Unirse a la Reunión"
+#: .\blog\templates\contact.html:36
+msgid "yourname@example.com"
+msgstr "tunombre@ejemplo.com"
 
-#: .\blog\templates\blog\home.html:198
-msgid "No meetings available."
-msgstr "No hay reuniones disponibles."
+#: .\blog\templates\contact.html:46
+msgid "Message:"
+msgstr "Mensaje:"
 
-#: .\blog\templates\blog\home.html:204
-msgid "See All Meetings"
-msgstr "Ver Todas las Reuniones"
+#: .\blog\templates\contact.html:47
+msgid "Your message"
+msgstr "Tu mensaje"
+
+#: .\blog\templates\contact.html:57
+msgid "Send Message"
+msgstr "Enviar Mensaje"
+
+#~ msgid "Web Development Portfolio"
+#~ msgstr "Portafolio de Desarrollo Web"
+
+#~ msgid "Design"
+#~ msgstr "Diseño"
+
+#~ msgid "Development"
+#~ msgstr "Desarrollo"
+
+#~ msgid "Testing"
+#~ msgstr "Pruebas"
+
+#~ msgid "Deployment"
+#~ msgstr "Despliegue"
+
+#~ msgid "Maintenance"
+#~ msgstr "Mantenimiento"
+
+#~ msgid "Optimization"
+#~ msgstr "Optimización"
+
+#~ msgid "Upcoming Meetings"
+#~ msgstr "Próximas Reuniones"
+
+#~ msgid "Type:"
+#~ msgstr "Tipo:"
+
+#~ msgid "Access:"
+#~ msgstr "Acceso:"
+
+#~ msgid "Date and Time:"
+#~ msgstr "Fecha y Hora:"
+
+#~ msgid "Join the Meeting"
+#~ msgstr "Unirse a la Reunión"
+
+#~ msgid "No meetings available."
+#~ msgstr "No hay reuniones disponibles."
+
+#~ msgid "See All Meetings"
+#~ msgstr "Ver Todas las Reuniones"
 
 #~ msgid "New Videos"
 #~ msgstr "Nuevos Videos"
