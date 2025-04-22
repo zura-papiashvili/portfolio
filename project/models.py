@@ -95,8 +95,8 @@ class Project(models.Model):
 
     class Meta:
         ordering = ["-start_date"]  # Order by start date (most recent first)
-        verbose_name = "Project"
-        verbose_name_plural = "Projects"
+        verbose_name = _("Project")
+        verbose_name_plural = _("Projects")
 
 
 class Service(models.Model):
@@ -121,5 +121,5 @@ class Service(models.Model):
         return self.title
 
     class Meta:
-        verbose_name = "Service"
-        verbose_name_plural = "Services"
+        verbose_name = _("Service")
+        verbose_name_plural = _("Services")

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-22 12:51-0400\n"
+"POT-Creation-Date: 2025-04-22 14:02-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,10 +26,6 @@ msgstr "Inglés"
 #: .\portfolio\settings.py:135 .\templates\base.html:66
 msgid "Spanish"
 msgstr "Español"
-
-#: .\portfolio\settings.py:136
-msgid "Georgian"
-msgstr "Georgiano"
 
 #: .\templates\admin\base_site.html:6
 msgid "Django administration"
@@ -62,6 +58,9 @@ msgstr "Idioma"
 #: .\templates\base.html:101
 msgid "Smart Route Inc. All Rights Reserved."
 msgstr "Smart Route Inc. Todos los Derechos Reservados."
+
+#~ msgid "Georgian"
+#~ msgstr "Georgiano"
 
 #~ msgid "For Members"
 #~ msgstr "Para Miembros"

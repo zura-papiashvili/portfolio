@@ -58,8 +58,8 @@ class Author(models.Model):
         super().save(*args, **kwargs)
 
     class Meta:
-        verbose_name = _("Author")
-        verbose_name_plural = _("Authors")
+        verbose_name = _("Team Member")
+        verbose_name_plural = _("Team Members")
 
 
 class Post(models.Model):

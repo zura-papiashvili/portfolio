@@ -17,6 +17,8 @@ class AuthorAdmin(TranslationAdmin):
     list_display = ("last_name", "first_name", "email_address")
     search_fields = ("last_name", "first_name")
 
+    list_filter = ("last_name", "first_name")
+
 
 @admin.register(FAQ)
 class FAQAdmin(TranslationAdmin):

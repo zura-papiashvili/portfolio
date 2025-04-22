@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-22 12:56-0400\n"
+"POT-Creation-Date: 2025-04-22 14:02-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -51,13 +51,13 @@ msgstr "Imagen"
 msgid "Biography"
 msgstr "Biografía"
 
-#: .\blog\models.py:61 .\blog\models.py:85
-msgid "Author"
-msgstr "Autor"
+#: .\blog\models.py:61
+msgid "Team Member"
+msgstr "Miembro del Equipo"
 
 #: .\blog\models.py:62
-msgid "Authors"
-msgstr "Autores"
+msgid "Team Members"
+msgstr "Miembros del Equipo"
 
 #: .\blog\models.py:66 .\blog\models.py:132 .\blog\models.py:173
 #: .\blog\models.py:188
@@ -95,6 +95,10 @@ msgstr "URL de YouTube"
 #: .\blog\models.py:78 .\blog\models.py:174
 msgid "Content"
 msgstr "Contenido"
+
+#: .\blog\models.py:85
+msgid "Author"
+msgstr "Autores"
 
 #: .\blog\models.py:90 .\blog\models.py:102
 msgid "Post"
@@ -220,24 +224,30 @@ msgstr "Producto Web"
 msgid "Web Products"
 msgstr "Productos Web"
 
-#: .\blog\templates\about.html:34
+#: .\blog\templates\about.html:33
 msgid "About Us"
 msgstr "Sobre nosotros"
 
-#: .\blog\templates\about.html:35
+#: .\blog\templates\about.html:34
 msgid ""
 "We are digital creators, an online marketplace for businesses, companies, "
 "organizations, entities, corporations, firms, and more."
-msgstr "Somos creadores digitales, un mercado en línea para empresas, compañías, organizaciones, entidades, corporaciones, firmas y más."
+msgstr ""
+"Somos creadores digitales, un mercado en línea para empresas, compañías, "
+"organizaciones, entidades, corporaciones, firmas y más."
 
-#: .\blog\templates\about.html:36
+#: .\blog\templates\about.html:35
 msgid ""
 "Easily present and impress your audience with impactful presentations. "
 "Choose from over a thousand professional designs tailored to any goal. "
 "Customize your website with your texts, logos, photos, videos, and audios."
-msgstr "Presenta con facilidad y sorprende a tu público con presentaciones impactantes. Elige entre más de mil diseños profesionales adaptados a cualquier objetivo. Personaliza tu website con tus textos, logos, fotos, videos y audios."
+msgstr ""
+"Presenta con facilidad y sorprende a tu público con presentaciones "
+"impactantes. Elige entre más de mil diseños profesionales adaptados a "
+"cualquier objetivo. Personaliza tu website con tus textos, logos, fotos, "
+"videos y audios."
 
-#: .\blog\templates\about.html:45
+#: .\blog\templates\about.html:44
 msgid "Our Team"
 msgstr "Nuestro Equipo"
 
@@ -291,57 +301,59 @@ msgstr "Costo:"
 msgid "🔗 See Website"
 msgstr "🔗 Ver Sitio Web"
 
-#: .\blog\templates\blog\home.html:131
-msgid "No projects found."
-msgstr "No se encontraron proyectos."
-
-#: .\blog\templates\blog\home.html:142
+#: .\blog\templates\blog\home.html:140
 msgid "Frequently Asked Questions"
 msgstr "Preguntas Frecuentes"
 
-#: .\blog\templates\blog\home.html:163
+#: .\blog\templates\blog\home.html:161
 msgid "Featured Authors"
 msgstr "Nuestra Equipo"
 
-#: .\blog\templates\blog\home.html:180
+#: .\blog\templates\blog\home.html:178
 msgid "Authors not available."
 msgstr "miembros no disponibles."
 
-#: .\blog\templates\blog\home.html:185
+#: .\blog\templates\blog\home.html:183
 msgid "See All Authors"
 msgstr "Ver Todos los miembros"
 
-#: .\blog\templates\contact.html:11
+#: .\blog\templates\contact.html:13
 msgid "Contact Us"
 msgstr "Contáctenos"
 
-#: .\blog\templates\contact.html:24
+#: .\blog\templates\contact.html:26
 msgid "Name:"
 msgstr "Nombre:"
 
-#: .\blog\templates\contact.html:25
+#: .\blog\templates\contact.html:27
 msgid "Your name"
 msgstr "Tu nombre"
 
-#: .\blog\templates\contact.html:35
+#: .\blog\templates\contact.html:37
 msgid "Email:"
 msgstr "Correo Electrónico:"
 
-#: .\blog\templates\contact.html:36
+#: .\blog\templates\contact.html:38
 msgid "yourname@example.com"
 msgstr "tunombre@ejemplo.com"
 
-#: .\blog\templates\contact.html:46
+#: .\blog\templates\contact.html:48
 msgid "Message:"
 msgstr "Mensaje:"
 
-#: .\blog\templates\contact.html:47
+#: .\blog\templates\contact.html:49
 msgid "Your message"
 msgstr "Tu mensaje"
 
-#: .\blog\templates\contact.html:57
+#: .\blog\templates\contact.html:59
 msgid "Send Message"
 msgstr "Enviar Mensaje"
+
+#~ msgid "Authors"
+#~ msgstr "Team Members"
+
+#~ msgid "No projects found."
+#~ msgstr "No se encontraron proyectos."
 
 #~ msgid "Web Development Portfolio"
 #~ msgstr "Portafolio de Desarrollo Web"
