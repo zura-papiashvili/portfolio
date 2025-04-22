@@ -185,31 +185,6 @@
 </div>
 
 
-<div class="container mt-5">
-    <h2 class="text-center mb-4 text-dark" data-aos="fade-up">{% trans "Upcoming Meetings" %}</h2>
-    <div class="row">
-        {% for meeting in events %}
-        <div class="col-md-4 mb-4 d-flex align-items-stretch" data-aos="fade-up">
-        <div class="card shadow border-0 w-100 fade-up" style="border-radius: 15px; overflow: hidden;">
-            <div class="card-body p-4 d-flex flex-column">
-            <h3 class="card-title text-dark fw-bold">{{ meeting.title }}</h3>
-            <p class="card-text text-muted">{{ meeting.description }}</p>
-            <p class="card-text"><strong>{% trans "Type:" %}</strong> {{ meeting.type }}</p>
-            <p class="card-text"><strong>{% trans "Access:" %}</strong> {{ meeting.access_type }}</p>
-            <p class="card-text"><strong>{% trans "Date and Time:" %}</strong> {{ meeting.event_time }}</p>
-            <a href="{{ meeting.zoom_link }}" class="btn btn-primary mt-auto" target="_blank" rel="noopener noreferrer" style="background-color: #b08e19;">{% trans "Join the Meeting" %}</a>
-            </div>
-        </div>
-        </div>
-    {% empty %}
-        <div class="alert alert-warning text-center" role="alert" data-aos="fade-up">
-        {% trans "No meetings available." %}
-        </div>
-    {% endfor %}
-    </div>
-</div>
-<div class="text-center mt-4" data-aos="fade-up">
-    <a href="{% url 'events' %}" class="btn btn-primary" style="background-color: #b08e19;">{% trans "See All Meetings" %}</a>
-</div>
+
 
 {% endblock %}
