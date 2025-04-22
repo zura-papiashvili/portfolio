@@ -133,7 +133,6 @@ gettext = lambda s: s
 LANGUAGES = [
     ("en", _("English")),
     ("es", _("Spanish")),
-    ("ka", _("Georgian")),
 ]
 MODELTRANSLATION_DEFAULT_LANGUAGE = "en"
 MODELTRANSLATION_FALLBACK_LANGUAGES = ("en",)
