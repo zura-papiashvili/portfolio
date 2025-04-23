@@ -5,12 +5,11 @@ from django.utils.translation import gettext_lazy as _
 
 class Project(models.Model):
     STATUS_CHOICES = [
-        ("planning", "Planning"),
-        ("in_progress", "In Progress"),
-        ("completed", "Completed"),
-        ("on_hold", "On Hold"),
+        ("planning", _("Planning")),
+        ("in_progress", _("In Progress")),
+        ("completed", _("Completed")),
+        ("on_hold", _("On Hold")),
     ]
-
     # Basic Fields
     name = models.CharField(max_length=255, verbose_name="Project Name")
     description = models.TextField(

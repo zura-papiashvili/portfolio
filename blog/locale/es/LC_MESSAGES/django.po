@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-23 13:07-0400\n"
+"POT-Creation-Date: 2025-04-23 13:16-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -287,41 +287,41 @@ msgstr "Nuestros Proyectos"
 msgid "Customer:"
 msgstr "Cliente:"
 
-#: .\blog\templates\blog\home.html:111
+#: .\blog\templates\blog\home.html:113
 msgid "Start Date:"
 msgstr "Fecha de Inicio:"
 
-#: .\blog\templates\blog\home.html:113
+#: .\blog\templates\blog\home.html:115
 #, fuzzy
 #| msgid "Date"
 msgid "End Date:"
 msgstr "Fecha de Finalización"
 
-#: .\blog\templates\blog\home.html:115
+#: .\blog\templates\blog\home.html:117
 msgid "Budget:"
 msgstr "Presupuesto:"
 
-#: .\blog\templates\blog\home.html:117
+#: .\blog\templates\blog\home.html:119
 msgid "Cost:"
 msgstr "Costo:"
 
-#: .\blog\templates\blog\home.html:123
+#: .\blog\templates\blog\home.html:125
 msgid "🔗 See Website"
 msgstr "🔗 Ver Sitio Web"
 
-#: .\blog\templates\blog\home.html:140
+#: .\blog\templates\blog\home.html:142
 msgid "Frequently Asked Questions"
 msgstr "Preguntas Frecuentes"
 
-#: .\blog\templates\blog\home.html:161
+#: .\blog\templates\blog\home.html:163
 msgid "Featured Authors"
 msgstr "Nuestra Equipo"
 
-#: .\blog\templates\blog\home.html:178
+#: .\blog\templates\blog\home.html:180
 msgid "Authors not available."
 msgstr "miembros no disponibles."
 
-#: .\blog\templates\blog\home.html:183
+#: .\blog\templates\blog\home.html:185
 msgid "See All Authors"
 msgstr "Ver Todos los miembros"
 

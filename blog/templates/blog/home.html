@@ -96,7 +96,7 @@
 
 <div class="container py-5">
     <h1 class="text-center text-dark mb-4" data-aos="fade-up">{% trans "Our Projects" %}</h1>
-    
+
     <div class="row g-4 d-flex align-items-stretch">
         {% for project in projects %}
             <div class="col-md-6 col-lg-4">
@@ -107,7 +107,9 @@
                     <div class="card-body">
                         <h5 class="card-title text-dark">{{ project.name }}</h5>
                         <p class="text-muted"><strong>{% trans "Customer:" %}</strong> {{ project.customer_name }}</p>
-                        <p class="badge bg-success">{{ project.get_status_display }}</p>
+                        <p class="badge {% if project.status == 'in_progress' %}bg-warning{% else %}bg-success{% endif %}">
+                            {{ project.get_status_display }}
+                        </p>
                         <p><strong>{% trans "Start Date:" %}</strong> {{ project.start_date }}</p>
                         {% if project.end_date %}
                             <p><strong>{% trans "End Date:" %}</strong> {{ project.end_date }}</p>
@@ -119,7 +121,7 @@
                         <p class="text-muted">{{ project.description|truncatewords:20 }}</p>
 
                         {% if project.project_video %}
-                            <a href="{{ project.project_video }}" class="btn btn-primary w-100" target="_blank" rel="noopener noreferrer">
+                            <a href="{{ project.project_video }}" class="btn btn-primary w-100" target="_blank" rel="noopener noreferrer" style="background-color: #050225;">
                                 {% trans "🔗 See Website" %}
                             </a>
                         {% endif %}

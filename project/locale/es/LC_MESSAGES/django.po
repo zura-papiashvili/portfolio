@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2025-04-22 14:06-0400\n"
+"POT-Creation-Date: 2025-04-23 13:28-0400\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,18 +18,36 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=n == 1 ? 0 : n != 0 && n % 1000000 == 0 ? "
 "1 : 2;\n"
-#: .\project\models.py:98
+
+#: .\project\models.py:8
+msgid "Planning"
+msgstr "Planificación"
+
+#: .\project\models.py:9
+msgid "In Progress"
+msgstr "En Progreso"
+
+#: .\project\models.py:10
+msgid "Completed"
+msgstr "Completado"
+
+#: .\project\models.py:11
+msgid "On Hold"
+msgstr "En Espera"
+
+#: .\project\models.py:97
 msgid "Project"
 msgstr "Proyecto"
 
-#: .\project\models.py:99
+#: .\project\models.py:98
 msgid "Projects"
 msgstr "Proyectos"
 
-#: .\project\models.py:124
+#: .\project\models.py:123
 msgid "Service"
 msgstr "Servicio"
 
-#: .\project\models.py:125
+#: .\project\models.py:124
 msgid "Services"
 msgstr "Servicios"
+
