@@ -18,7 +18,7 @@ def home(request):
     events = ZoomEvent.objects.filter(access_type="public").all()
     faqs = FAQ.objects.exclude(**{f"question_{language}": ""}).all()
     faqs_main = faqs.filter(main=True).exclude(**{f"question_{language}": ""})[:3]
-    authors = Author.objects.all()[:3]
+    authors = Author.objects.all()[:2]
     services = Service.objects.exclude(**{f"title_{language}": ""}).all()[:3]
     projects = Project.objects.exclude(**{f"name_{language}": ""}).all()[:3]
     web_products = WebProduct.objects.exclude(**{f"name_{language}": ""}).all()[:3]

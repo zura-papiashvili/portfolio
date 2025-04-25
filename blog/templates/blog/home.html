@@ -94,6 +94,9 @@
         </div>
     </div>
 
+
+<!-- Projects Section -->
+
 <div class="container py-5">
     <h1 class="text-center text-dark mb-4" data-aos="fade-up">{% trans "Our Projects" %}</h1>
 
@@ -107,7 +110,7 @@
                     <div class="card-body">
                         <h5 class="card-title text-dark">{{ project.name }}</h5>
                         <p class="text-muted"><strong>{% trans "Customer:" %}</strong> {{ project.customer_name }}</p>
-                        <p class="badge {% if project.status == 'in_progress' %}bg-warning{% else %}bg-success{% endif %}">
+                        <p class="badge {% if project.status == 'in_progress' %}" style="background-color: #ffb923;"{% else %}bg-success{% endif %}">
                             {{ project.get_status_display }}
                         </p>
                         <p><strong>{% trans "Start Date:" %}</strong> {{ project.start_date }}</p>
@@ -159,11 +162,11 @@
 </div>
 
 <!-- Authors Section -->
-<div class="container mt-5">
+<div class="container mt-5" style="background-color: #EEDC90; padding: 20px; border-radius: 15px;">
     <h2 class="text-center mb-4 text-dark" data-aos="fade-up">{% trans "Featured Authors" %}</h2>
     <div class="row">
     {% for author in authors %}
-        <div class="col-md-4 mb-4 d-flex align-items-stretch" data-aos="fade-up">
+        <div class="col-md-6 mb-4 d-flex align-items-stretch" data-aos="fade-up">
         <div class="card shadow border-0 w-100 fade-up" style="border-radius: 15px; overflow: hidden;">
             <div class="card-body p-4 d-flex flex-column text-center">
             <img src="{{ author.image.url }}" class="rounded-circle mb-3" alt="{{ author.first_name }} {{ author.last_name }}" style="width: 100px; height: 100px; object-fit: cover;">
