@@ -124,7 +124,7 @@
                         <p class="text-muted">{{ project.description|truncatewords:20 }}</p>
 
                         {% if project.project_video %}
-                            <a href="{{ project.project_video }}" class="btn btn-primary w-100" target="_blank" rel="noopener noreferrer" style="background-color: #050225;">
+                            <a href="{{ project.project_video }}" class="btn btn-primary w-100" target="_blank" rel="noopener noreferrer" style="background-color: #066778;">
                                 {% trans "🔗 See Website" %}
                             </a>
                         {% endif %}
@@ -187,7 +187,7 @@
     {% endfor %}
     </div>
     <div class="text-center mt-4" data-aos="fade-right">
-    <a href="{% url 'about' %}" class="btn btn-gold" style="background-color: #b08e19;">{% trans "See All Authors" %}</a>
+    <a href="{% url 'about' %}" class="btn btn-gold" style="background-color: #066778;">{% trans "See All Authors" %}</a>
     </div>
 </div>
 
