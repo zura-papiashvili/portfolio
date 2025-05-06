@@ -61,7 +61,7 @@
 
 
     <!-- Services Section -->
-    <div class="container mt-5">
+    <div class="container mt-5" style="background-color: #EEDC90; padding: 20px; border-radius: 15px;">
         <h2 class="text-center mb-4 text-dark" data-aos="fade-up">{% trans "Our Services" %}</h2>
         <div class="row">
             {% for service in services %}
@@ -97,20 +97,20 @@
 
 <!-- Projects Section -->
 
-<div class="container py-5">
+<div class="container mt-5" style="background-color: #EEDC90; padding: 20px; border-radius: 15px;">
     <h1 class="text-center text-dark mb-4" data-aos="fade-up">{% trans "Our Projects" %}</h1>
 
     <div class="row g-4 d-flex align-items-stretch">
         {% for project in projects %}
             <div class="col-md-6 col-lg-4">
-                <div class="card project-card shadow-sm border-0" data-aos="zoom-in">
+                <div class="card project-card shadow-sm border-0" data-aos="zoom-in" style="border-radius: 15px; overflow: hidden;">
                     {% if project.image %}
-                        <img src="{{ project.image.url }}" alt="{{ project.name }}" class="card-img-top project-img">
+                        <img src="{{ project.image.url }}" alt="{{ project.name }}" class="card-img-top project-img" style="border-radius: 15px 15px 0 0;">
                     {% endif %}
                     <div class="card-body">
                         <h5 class="card-title text-dark">{{ project.name }}</h5>
                         <p class="text-muted"><strong>{% trans "Customer:" %}</strong> {{ project.customer_name }}</p>
-                        <p class="badge {% if project.status == 'in_progress' %}" style="background-color: #ffb923;"{% else %}bg-success{% endif %}">
+                        <p class="badge" style="background-color: {% if project.status == 'in_progress' %}#ffb923{% else %}#066778{% endif %};">
                             {{ project.get_status_display }}
                         </p>
                         <p><strong>{% trans "Start Date:" %}</strong> {{ project.start_date }}</p>
@@ -132,7 +132,9 @@
                 </div>
             </div>
         {% empty %}
-            <p>No projects found.</p>
+            <div class="alert alert-warning text-center" role="alert" data-aos="fade-up">
+                {% trans "No projects found." %}
+            </div>
         {% endfor %}
     </div>
 </div>
@@ -141,23 +143,23 @@
 
 
 <!-- FAQ Section with Enhanced Styles and JavaScript -->
-<div class="container mt-5">
+<div class="container mt-5" style="background-color: #EEDC90; padding: 20px; border-radius: 15px;">
     <h2 class="text-center mb-4 text-dark" data-aos="fade-up">{% trans "Frequently Asked Questions" %}</h2>
     <div class="accordion" id="faqAccordion">
-    {% for faq in faqs %}
+        {% for faq in faqs %}
         <div class="accordion-item mb-4 shadow-lg rounded-3" data-aos="fade-right">
-        <h2 class="accordion-header" id="heading{{ forloop.counter }}">
-            <button style="background-color: #050225; border: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);" class="accordion-button text-white border-0 rounded-3 p-3 fw-bold fs-5 d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
-                <i class="fas fa-question-circle me-3" style="font-size: 1.3rem;"></i>{{ faq.question }}
-            </button>
-        </h2>
-        <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#faqAccordion">
-            <div class="accordion-body text-muted p-4" style="background-color: #f9f9f9; border-left: 4px solid #3498db;">
-            {{ faq.answer }}
+            <h2 class="accordion-header" id="heading{{ forloop.counter }}">
+                <button style="background-color: #066778; border: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);" class="accordion-button text-white border-0 rounded-3 p-3 fw-bold fs-5 d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
+                    <i class="fas fa-question-circle me-3" style="font-size: 1.3rem;"></i>{{ faq.question }}
+                </button>
+            </h2>
+            <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#faqAccordion">
+                <div class="accordion-body text-muted p-4" style="background-color: #f9f9f9; border-left: 4px solid #3498db;">
+                    {{ faq.answer }}
+                </div>
             </div>
         </div>
-        </div>
-    {% endfor %}
+        {% endfor %}
     </div>
 </div>
 
