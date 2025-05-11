@@ -15,13 +15,11 @@ from django.utils.translation import get_language
 
 def home(request):
     language = get_language()  # or request.LANGUAGE_CODE
-    events = ZoomEvent.objects.filter(access_type="public").all()
     faqs = FAQ.objects.exclude(**{f"question_{language}": ""}).all()
     faqs_main = faqs.filter(main=True).exclude(**{f"question_{language}": ""})[:3]
     authors = Author.objects.all()[:2]
     services = Service.objects.exclude(**{f"title_{language}": ""}).all()[:3]
     projects = Project.objects.exclude(**{f"name_{language}": ""}).all()[:3]
-    web_products = WebProduct.objects.exclude(**{f"name_{language}": ""}).all()[:3]
 
     return render(
         request,
@@ -30,10 +28,8 @@ def home(request):
             "faqs": faqs,
             "faqs_main": faqs_main,
             "authors": authors,
-            "events": events,
             "projects": projects,
             "services": services,
-            "products": web_products,
         },
     )
 
@@ -41,15 +37,6 @@ def home(request):
 def about(request):
     authors = Author.objects.all()
     return render(request, "about.html", {"authors": authors})
-
-
-# def contact(request):
-#     return render(request, "contact.html")
-
-
-def posts(request):
-    posts = Post.objects.filter(access_type="public").order_by("-date")
-    return render(request, "blog/posts.html", {"posts": posts})
 
 
 def contact(request):
@@ -79,45 +66,6 @@ def contact(request):
         return render(request, "contact.html", {"message_name": message_name})
 
     return render(request, "contact.html", {})
-
-
-def restricted_page_view(request):
-    page = get_object_or_404(RestrictedPage)  # There is only one page, so just fetch it
-    form = AccessCodeForm(request.POST or None)
-
-    # Check if the user has already entered the correct code
-    if request.session.get("access_granted", False):
-        posts = Post.objects.filter(access_type="private").order_by("-date")
-        events = ZoomEvent.objects.filter(access_type="private").all()
-        return render(
-            request,
-            "restricted_page.html",
-            {"page": page, "posts": posts, "events": events},
-        )
-
-    if request.method == "POST" and form.is_valid():
-
-        if form.cleaned_data["code"] == page.access_code:
-            # Store that the user has entered the correct code
-            request.session["access_granted"] = True
-            posts = Post.objects.filter(access_type="private").order_by("-date")
-            events = ZoomEvent.objects.filter(access_type="private").all()
-            return render(
-                request,
-                "restricted_page.html",
-                {"page": page, "posts": posts, "events": events},
-            )
-        else:
-            # If the code doesn't match, deny access
-            return render(request, "restricted_denied.html", {"page": page})
-
-    # Render the form if the code hasn't been submitted yet
-    return render(request, "enter_code.html", {"form": form, "page": page})
-
-
-def zoom_events(request):
-    events = ZoomEvent.objects.all()
-    return render(request, "zoom_events.html", {"events": events})
 
 
 def web_products(request):
