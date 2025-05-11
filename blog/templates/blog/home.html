@@ -27,169 +27,314 @@
     <img src="{% static 'blog/images/cover.png' %}" alt="Cover Image" class="cover-image">
 
     <div class="content-container">
-        <div class="left-section">
-            <div class="faq-container">
-                {% for faq in faqs_main %}
-                <div class="faq-item" onclick="showAnswer('{{ faq.answer|escapejs }}')">
-                    <h3 class="faq-question"><i class="fas fa-question-circle me-3"></i> {{ faq.question }}</h3>
-                </div>
-                {% endfor %}
-
-                <div class="faq-answer-container">
-                    <p id="faq-answer" class="faq-answer"></p>
-                </div>
-
-                <div class="gradient-line"></div>
-            </div>
+    <div class="left-section">
+        <div class="faq-container" id="faq-container">
+            <!-- FAQs will be dynamically inserted here -->
         </div>
 
-        <div class="right-section">
-            <img src="{% static 'images/logo.png' %}" alt="Author Image">
-            <p>{% trans "Taking us to" %}<br>{% trans " the next level" %}</p>
+        <div class="faq-answer-container">
+            <p id="faq-answer" class="faq-answer"></p>
         </div>
+
+        <div class="gradient-line"></div>
     </div>
+
+    <div class="right-section">
+        <img src="{% static 'images/logo.png' %}" alt="Author Image">
+        <p>{% trans "Taking us to" %}<br>{% trans " the next level" %}</p>
+    </div>
+</div>
+
+
 </section>
 
 <script>
-   
+document.addEventListener("DOMContentLoaded", function() {
+    const language = "{{ request.LANGUAGE_CODE }}";  // Get the current language from Django context
+    const faqContainer = document.getElementById("faq-container");
+
+    // Fetch FAQ data from the Django view
+    fetch(`/api/faqs-main/?language=${language}`)
+        .then(response => response.json())
+        .then(data => {
+            console.log('Fetched FAQ data:', data);  // Log the data to verify the structure
+            // Insert each FAQ into the FAQ container
+            data.forEach(faq => {
+                const faqItem = document.createElement('div');
+                faqItem.classList.add('faq-item');
+                faqItem.onclick = () => showAnswer(faq.answer);
+                faqItem.innerHTML = `<h3 class="faq-question"><i class="fas fa-question-circle me-3"></i> ${faq.question}</h3>`;
+                faqContainer.appendChild(faqItem);
+            });
+        })
+        .catch(error => console.error("Error fetching FAQ data:", error));
+
+    let lastAnswer = null;
+
+    function showAnswer(answer) {
+    const answerElem = document.getElementById("faq-answer");
+    const answerContainer = answerElem?.parentElement;
+
+    if (!answerElem || !answerContainer) return;
+
+    if (lastAnswer === answer) {
+        answerElem.innerText = "";
+        answerContainer.style.display = "none";
+        lastAnswer = null;
+    } else {
+        answerElem.innerText = answer;
+        answerContainer.style.display = "block"; // ← this makes it visible!
+        
+        lastAnswer = answer;
+    }
+}
+
+});
 </script>
 
 
+
+
+
+
+
+
 <style>
-  
+ 
 </style>
 
 
-    <!-- Services Section -->
-    <div class="container mt-5" style="background-color: #EEDC90; padding: 20px; border-radius: 15px;">
-        <h2 class="text-center mb-4 text-dark" data-aos="fade-up">{% trans "Our Services" %}</h2>
-        <div class="row">
-            {% for service in services %}
-            <div class="col-md-4 mb-4 d-flex align-items-stretch" data-aos="fade-up">
-                <div class="card shadow border-0 w-100" style="border-radius: 15px; overflow: hidden;">
-                    <div class="card-body p-4 d-flex flex-column">
-                        <h3 class="card-title text-dark fw-bold">{{ service.title }}</h3>
-                        <p class="card-text text-muted">{{ service.description }}</p>
-                        <p class="card-text"><strong>{% trans "Price Range:" %}</strong> {{ service.price_range }}</p>
-                        <p class="card-text"><strong>{% trans "Features:" %}</strong></p>
-                        <ul class="list-unstyled">
-                            {% for feature in service.get_features %}
-                            <li>- {{ feature }}</li>
-                            {% endfor %}
-                        </ul>
-                        <p class="card-text"><strong>{% trans "Ideal For:" %}</strong></p>
-                        <ul class="list-unstyled">
-                            {% for group in service.get_ideal_for %}
-                            <li>- {{ group }}</li>
-                            {% endfor %}
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            {% empty %}
-            <div class="alert alert-warning text-center" role="alert" data-aos="fade-up">
-                {% trans "No services available." %}
-            </div>
-            {% endfor %}
-        </div>
-    </div>
+ <!-- Services Section -->
+<div class="container mt-5" style="background-color: #EEDC90; padding: 20px; border-radius: 15px;">
+    <h2 class="text-center mb-4 text-dark" data-aos="fade-up">{% trans "Our Services" %}</h2>
+    <div id="services-container" class="row"></div>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    fetch("/api/services/")
+      .then(response => response.json())
+      .then(data => {
+        const container = document.getElementById("services-container");
+
+        if (data.length === 0) {
+          container.innerHTML = `
+            <div class="alert alert-warning text-center w-100" role="alert" data-aos="fade-up">
+              {{ _("No services available.") }}
+            </div>`;
+          return;
+        }
+
+        data.forEach(service => {
+          const card = document.createElement("div");
+          card.className = "col-md-4 mb-4 d-flex align-items-stretch";
+          card.setAttribute("data-aos", "fade-up");
+          card.innerHTML = `
+            <div class="card shadow border-0 w-100" style="border-radius: 15px; overflow: hidden;">
+              <div class="card-body p-4 d-flex flex-column">
+                <h3 class="card-title text-dark fw-bold">${service.title}</h3>
+                <p class="card-text text-muted">${service.description}</p>
+                <p class="card-text"><strong>{% trans "Price Range:" %}</strong> ${service.price_range}</p>
+                <p class="card-text"><strong>{% trans "Features:" %}</strong></p>
+                <ul class="list-unstyled">
+                  ${service.features.map(f => `<li>- ${f}</li>`).join("")}
+                </ul>
+                <p class="card-text"><strong>{% trans "Ideal For:" %}</strong></p>
+                <ul class="list-unstyled">
+                  ${service.ideal_for.map(g => `<li>- ${g}</li>`).join("")}
+                </ul>
+              </div>
+            </div>`;
+          container.appendChild(card);
+        });
+      })
+      .catch(error => {
+        console.error("Error loading services:", error);
+      });
+  });
+</script>
 
 
 <!-- Projects Section -->
 
 <div class="container mt-5" style="background-color: #EEDC90; padding: 20px; border-radius: 15px;">
     <h1 class="text-center text-dark mb-4" data-aos="fade-up">{% trans "Our Projects" %}</h1>
-
-    <div class="row g-4 d-flex align-items-stretch">
-        {% for project in projects %}
-            <div class="col-md-6 col-lg-4">
-                <div class="card project-card shadow-sm border-0" data-aos="zoom-in" style="border-radius: 15px; overflow: hidden;">
-                    {% if project.image %}
-                        <img src="{{ project.image.url }}" alt="{{ project.name }}" class="card-img-top project-img" style="border-radius: 15px 15px 0 0;">
-                    {% endif %}
-                    <div class="card-body">
-                        <h5 class="card-title text-dark">{{ project.name }}</h5>
-                        <p class="text-muted"><strong>{% trans "Customer:" %}</strong> {{ project.customer_name }}</p>
-                        <p class="badge" style="background-color: {% if project.status == 'in_progress' %}#ffb923{% else %}#066778{% endif %};">
-                            {{ project.get_status_display }}
-                        </p>
-                        <p><strong>{% trans "Start Date:" %}</strong> {{ project.start_date }}</p>
-                        {% if project.end_date %}
-                            <p><strong>{% trans "End Date:" %}</strong> {{ project.end_date }}</p>
-                        {% endif %}
-                        <p><strong>{% trans "Budget:" %}</strong> ${{ project.budget }}</p>
-                        {% if project.cost %}
-                            <p><strong>{% trans "Cost:" %}</strong> ${{ project.cost }}</p>
-                        {% endif %}
-                        <p class="text-muted">{{ project.description|truncatewords:20 }}</p>
-
-                        {% if project.project_video %}
-                            <a href="{{ project.project_video }}" class="btn btn-primary w-100" target="_blank" rel="noopener noreferrer" style="background-color: #066778;">
-                                {% trans "🔗 See Website" %}
-                            </a>
-                        {% endif %}
-                    </div>
-                </div>
-            </div>
-        {% empty %}
-            <div class="alert alert-warning text-center" role="alert" data-aos="fade-up">
-                {% trans "No projects found." %}
-            </div>
-        {% endfor %}
-    </div>
+    <div class="row g-4 d-flex align-items-stretch" id="project-list"></div>
 </div>
 
 
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("/api/projects/")
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById("project-list");
 
+            if (data.length === 0) {
+                container.innerHTML = `
+                    <div class="alert alert-warning text-center" role="alert" data-aos="fade-up">
+                        No projects found.
+                    </div>`;
+                AOS.refresh();
+                return;
+            }
+
+            data.forEach(project => {
+                const card = document.createElement("div");
+                card.className = "col-md-6 col-lg-4";
+
+                card.innerHTML = `
+                    <div class="card project-card shadow-sm border-0" data-aos="zoom-in" style="border-radius: 15px; overflow: hidden;">
+                        ${project.image_url ? `<img src="${project.image_url}" alt="${project.name}" class="card-img-top project-img" style="border-radius: 15px 15px 0 0; height: 200px; object-fit: cover;">` : ""}
+                        <div class="card-body">
+                            <h5 class="card-title text-dark">${project.name}</h5>
+                            <p class="text-muted"><strong>Customer:</strong> ${project.customer_name}</p>
+                            <p class="badge" style="background-color: ${project.status_code === 'in_progress' ? '#ffb923' : '#066778'};">
+                                ${project.status}
+                            </p>
+                            <p><strong>Start Date:</strong> ${project.start_date}</p>
+                            ${project.end_date ? `<p><strong>End Date:</strong> ${project.end_date}</p>` : ""}
+                            <p><strong>Budget:</strong> $${project.budget.toFixed(2)}</p>
+                            ${project.cost ? `<p><strong>Cost:</strong> $${project.cost.toFixed(2)}</p>` : ""}
+                            <p class="text-muted">${project.description.split(" ").slice(0, 20).join(" ")}...</p>
+                            ${project.project_video ? `
+                                <a href="${project.project_video}" class="btn btn-primary w-100" target="_blank" rel="noopener noreferrer" style="background-color: #066778;">
+                                    🔗 See Website
+                                </a>` : ""}
+                        </div>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+
+            // ✅ Refresh AOS after adding all elements
+            AOS.refresh();
+        })
+        .catch(error => {
+            console.error("Failed to fetch projects:", error);
+        });
+});
+
+</script>
 
 <!-- FAQ Section with Enhanced Styles and JavaScript -->
 <div class="container mt-5" style="background-color: #EEDC90; padding: 20px; border-radius: 15px;">
     <h2 class="text-center mb-4 text-dark" data-aos="fade-up">{% trans "Frequently Asked Questions" %}</h2>
     <div class="accordion" id="faqAccordion">
-        {% for faq in faqs %}
-        <div class="accordion-item mb-4 shadow-lg rounded-3" data-aos="fade-right">
-            <h2 class="accordion-header" id="heading{{ forloop.counter }}">
-                <button style="background-color: #066778; border: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);" class="accordion-button text-white border-0 rounded-3 p-3 fw-bold fs-5 d-flex align-items-center" type="button" data-bs-toggle="collapse" data-bs-target="#collapse{{ forloop.counter }}" aria-expanded="false" aria-controls="collapse{{ forloop.counter }}">
-                    <i class="fas fa-question-circle me-3" style="font-size: 1.3rem;"></i>{{ faq.question }}
-                </button>
-            </h2>
-            <div id="collapse{{ forloop.counter }}" class="accordion-collapse collapse {% if forloop.first %}show{% endif %}" aria-labelledby="heading{{ forloop.counter }}" data-bs-parent="#faqAccordion">
-                <div class="accordion-body text-muted p-4" style="background-color: #f9f9f9; border-left: 4px solid #5a9c8a;">
-                    {{ faq.answer }}
-                </div>
-            </div>
-        </div>
-        {% endfor %}
-    </div>
+    <!-- Dynamic FAQ items will be inserted here -->
 </div>
+</div>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("/api/faqs/")
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById("faqAccordion");
+
+            if (data.length === 0) {
+                container.innerHTML = `
+                    <div class="alert alert-warning text-center" role="alert" data-aos="fade-up">
+                        No FAQs available.
+                    </div>`;
+                AOS.refresh();
+                return;
+            }
+
+            data.forEach((faq, index) => {
+                const item = document.createElement("div");
+                item.className = "accordion-item mb-4 shadow-lg rounded-3";
+                item.setAttribute("data-aos", "fade-right");
+
+                const isFirst = index === 0 ? "show" : "";
+                const headingId = `heading${index + 1}`;
+                const collapseId = `collapse${index + 1}`;
+
+                item.innerHTML = `
+                    <h2 class="accordion-header" id="${headingId}">
+                        <button class="accordion-button text-white border-0 rounded-3 p-3 fw-bold fs-5 d-flex align-items-center"
+                            style="background-color: #066778; border: none; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);" 
+                            type="button" data-bs-toggle="collapse" data-bs-target="#${collapseId}" 
+                            aria-expanded="${isFirst ? 'true' : 'false'}" aria-controls="${collapseId}">
+                            <i class="fas fa-question-circle me-3" style="font-size: 1.3rem;"></i>${faq.question}
+                        </button>
+                    </h2>
+                    <div id="${collapseId}" class="accordion-collapse collapse ${isFirst}" aria-labelledby="${headingId}" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted p-4" style="background-color: #f9f9f9; border-left: 4px solid #5a9c8a;">
+                            ${faq.answer}
+                        </div>
+                    </div>
+                `;
+
+                container.appendChild(item);
+            });
+
+            AOS.refresh();
+        })
+        .catch(error => {
+            console.error("Failed to fetch FAQs:", error);
+        });
+});
+</script>
+
+
 
 <!-- Authors Section -->
 <div class="container mt-5" style="background-color: #EEDC90; padding: 20px; border-radius: 15px;">
     <h2 class="text-center mb-4 text-dark" data-aos="fade-up">{% trans "Featured Authors" %}</h2>
-    <div class="row">
-    {% for author in authors %}
-        <div class="col-md-6 mb-4 d-flex align-items-stretch" data-aos="fade-up">
-        <div class="card shadow border-0 w-100 fade-up" style="border-radius: 15px; overflow: hidden;">
-            <div class="card-body p-4 d-flex flex-column text-center">
-            <img src="{{ author.image.url }}" class="rounded-circle mb-3" alt="{{ author.first_name }} {{ author.last_name }}" style="width: 100px; height: 100px; object-fit: cover;">
-            <h3 class="card-title text-dark fw-bold">{{ author.first_name }} {{ author.last_name }}</h3>
-            <p class="card-text text-muted">{{ author.bio }}</p>
-            <div class="mt-auto">
-                <!-- Add any additional content here if needed -->
-            </div>
-            </div>
-        </div>
-        </div>
-    {% empty %}
-        <div class="alert alert-warning text-center" role="alert" data-aos="fade-up">
-        {% trans "Authors not available." %}
-        </div>
-    {% endfor %}
+    <div class="row" id="author-list">
+        <!-- Dynamic author cards will go here -->
     </div>
+
     <div class="text-center mt-4" data-aos="fade-right">
     <a href="{% url 'about' %}" class="btn btn-gold" style="background-color: #066778;">{% trans "See All Authors" %}</a>
     </div>
 </div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("/api/authors/")
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById("author-list");
+
+            if (data.length === 0) {
+                container.innerHTML = `
+                    <div class="alert alert-warning text-center" role="alert" data-aos="fade-up">
+                        Authors not available.
+                    </div>`;
+                AOS.refresh();
+                return;
+            }
+
+            data.forEach(author => {
+                const card = document.createElement("div");
+                card.className = "col-md-6 mb-4 d-flex align-items-stretch";
+                card.setAttribute("data-aos", "fade-up");
+
+                card.innerHTML = `
+                    <div class="card shadow border-0 w-100 fade-up" style="border-radius: 15px; overflow: hidden;">
+                        <div class="card-body p-4 d-flex flex-column text-center">
+                            <img src="${author.image_url}" class="rounded-circle mb-3" alt="${author.first_name} ${author.last_name}" style="width: 100px; height: 100px; object-fit: cover;">
+                            <h3 class="card-title text-dark fw-bold">${author.first_name} ${author.last_name}</h3>
+                            <p class="card-text text-muted">${author.bio}</p>
+                            <div class="mt-auto"></div>
+                        </div>
+                    </div>
+                `;
+
+                container.appendChild(card);
+            });
+
+            AOS.refresh();
+        })
+        .catch(error => {
+            console.error("Failed to fetch authors:", error);
+        });
+});
+</script>
 
 
 

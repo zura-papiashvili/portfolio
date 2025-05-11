@@ -11,32 +11,22 @@ from portfolio.settings import EMAIL_HOST_USER
 from django.shortcuts import redirect
 from django.utils.translation import activate
 from django.utils.translation import get_language
+from django.http import JsonResponse
 
 
 def home(request):
-    language = get_language()  # or request.LANGUAGE_CODE
-    faqs = FAQ.objects.exclude(**{f"question_{language}": ""}).all()
-    faqs_main = faqs.filter(main=True).exclude(**{f"question_{language}": ""})[:3]
-    authors = Author.objects.all()[:2]
-    services = Service.objects.exclude(**{f"title_{language}": ""}).all()[:3]
-    projects = Project.objects.exclude(**{f"name_{language}": ""}).all()[:3]
 
     return render(
         request,
         "blog/home.html",
-        {
-            "faqs": faqs,
-            "faqs_main": faqs_main,
-            "authors": authors,
-            "projects": projects,
-            "services": services,
-        },
     )
 
 
 def about(request):
-    authors = Author.objects.all()
-    return render(request, "about.html", {"authors": authors})
+    return render(
+        request,
+        "about.html",
+    )
 
 
 def contact(request):
@@ -69,8 +59,7 @@ def contact(request):
 
 
 def web_products(request):
-    products = WebProduct.objects.all()
-    return render(request, "web_products.html", {"products": products})
+    return render(request, "web_products.html")
 
 
 def switch_language(request, language):
